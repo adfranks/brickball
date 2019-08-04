@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Brick ball</title>
-  <meta name="keywords" content="brickball forgot password" />
+  <meta name="keywords" content="brick ball forgot password" />
   <meta name="description" content="breakout game for web browser password reset instructions" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
@@ -29,7 +29,7 @@
             <p>Otherwise, ignore this message.<br />Brickball</p></body></html>";
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: adpfranks@gmail.com" . "\r\n";
+    $headers .= "From: info@adfranks.com" . "\r\n";
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=adpfrank_db1", $username, $password);
