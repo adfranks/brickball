@@ -18,8 +18,8 @@ if (!isset($_SESSION['uname'])) {
 <head>
   <meta charset="UTF-8" />
   <title>Brick Ball</title>
-  <meta name="keywords" content="brick ball, breakout, arkanoid, game" />
-  <meta name="description" content="breakout game for web browser" />
+  <meta name="keywords" content="brick ball, vintage, retro, video game, breakout, arkanoid, online game, web application" />
+  <meta name="description" content="A fun version of the vintage Breakout video game to be played in a web browser.  Use your keyboard to move the paddle and knock the ball into the bricks!" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="pragma" content="no-cache">
   <link rel="icon" href="images/brickball-icon.png">
@@ -184,7 +184,9 @@ if (!isset($_SESSION['uname'])) {
           <li>If you succeed, it's on to the second and final level!</li>
           <li>To keep you on your toes, the ball speeds up after encountering a new color.</li>
           <li>Be aware that bouncing the ball off the top of the screen shrinks the paddle.</li>
+          <li>Have fun!</li>
         </ul>
+        <p style="color:white;"><span style="font-size:2em;">GamesDeal</span> <a style="color:white;" href="http://www.gamesdeal.com/?a-aid=brickball&amp;a_aid=brickball&amp;a_bid=ae830298" target="_top"><strong>3% Off Code</strong><br/>3% off code & free shipping  No minimum Purchase Requirement Code:gd3%off</a><img style="border:0" src="http://affiliate.gamesdeal.com/scripts/imp.php?a_aid=brickball&amp;a_bid=ae830298" width="1" height="1" alt="" /><strong style="font-size:2em;"> Visit GamesDeal</strong></p>
       </div>
 
       <div id="greeting"> 
