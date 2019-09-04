@@ -1,5 +1,8 @@
+// Create the game
 var pad, ball, bricks, brickCount, level, round, levelText, ballText, score, over,
 count, signModal, logModal;
+
+// Object literal for the game screen with properties and methods.
 var gameScreen = {
     canvas: document.getElementById("breakoutCanvas"),
     start: function() {
@@ -26,6 +29,7 @@ var gameScreen = {
     }
 };
 
+// Set up the game to begin.
 function initialize() {
     gameScreen.start();
     levelText = new Text(14, 55, "white", 15);
@@ -63,6 +67,7 @@ function restart() {
     document.getElementById('game-end').id = 'new-button';
 }
 
+// Custom types for the game with properties and methods.
 function Sound(src) {
     var audioElement = document.createElement("audio"),
     isSupp = audioElement.canPlayType('audio/ogg'),
@@ -78,6 +83,7 @@ function Sound(src) {
     this.stop = function() {this.sound.pause();}
 }
 
+// Constructor for any visual object in the game.
 function GameObj(x, y, color, width, height, type) {
     this.x = x;
     this.y = y;
@@ -106,6 +112,7 @@ Brick.prototype.draw = function () {
     }
 };
 
+// Creates all the bricks together.
 function multiBricks(brickColumn, brickRow, brickWidth, brickHeight) {
     var c, r, color;
     for (c = 0; c < brickColumn; c++) {
