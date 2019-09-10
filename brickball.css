@@ -28,7 +28,7 @@ h1 {
   padding: 0 16px;
 }
 footer h1 {font-size: 1.5em;}
-canvas {background-color: black; margin-bottom: 10px;}
+canvas {background-color: black;}
 main {margin: 0 auto 15px auto; width: 956px; background-color: lightgrey; padding: 20px;}
 button {
   color: #f3f3f3;
@@ -52,14 +52,14 @@ input[type=text], input[type=password], input[type=email] {
   box-sizing: border-box;
 }
 input[type=checkbox] {float: left;}
-p {padding: 30px;}
+p {padding: 30px; font-size: 1.2em;}
 a {color: black;}
 a:hover {color: blue;}
 ul {list-style-type: circle; margin-top: 0; padding-top: 0; padding-bottom: 20px;}
 div {box-sizing: border-box;}
 span.forgot {float: left; padding-top: 8px; font-size: 0.75em;}
 table {
-  background-color: lightgrey; 
+  background-color: #132020; 
   color: white;
   border-spacing: 15px; 
   margin-left: 15px;
@@ -69,39 +69,20 @@ th, td {text-align: center; padding: 5px 10px;}
 th {font-variant: small-caps; font-weight: bold;}
 tr:nth-child(even) {background-color: darkslategrey;}
 tr:nth-child(odd), th {background-color: lightslategrey;}
+
 #container {margin: 0 auto; width: 996px;}
-#greeting {float: right; width: 50%; padding-left: 15px;}
-#greet {padding-bottom: 0;}
+#greeting {width: 100%;}
+#greet {text-align: justify;}
 #directions {float: left; width: 50%; padding-right: 15px; background-color: lightslategrey;}
 #directions b {font-size: 1.2em;}
-#top {padding-top: 0px;} 
-#new-game {padding-bottom: 0px;}
+#top-ten {float: right; width: 50%; padding-left: 15px;}
+#top {padding: 0 30px;}
+#new-game {padding-bottom: 0;}
 #game-end:hover {animation: none; background-color: blue;}
 #game-end {
   animation: attention 20s infinite;
 }
-@keyframes attention {
-  5% {background-color: lightslategrey;}
-  10% {background-color: darkslategrey;}
-  15% {background-color: lightslategrey;}
-  20% {background-color: darkslategrey;}
-  25% {background-color: lightslategrey;}
-  30% {background-color: darkslategrey;}
-  35% {background-color: lightslategrey;}
-  40% {background-color: darkslategrey;}
-  45% {background-color: lightslategrey;}
-  50% {background-color: darkslategrey;}
-  55% {background-color: lightslategrey;}
-  60% {background-color: darkslategrey;}
-  65% {background-color: lightslategrey;}
-  70% {background-color: darkslategrey;}
-  75% {background-color: lightslategrey;}
-  80% {background-color: darkslategrey;}
-  85% {background-color: lightslategrey;}
-  90% {background-color: darkslategrey;}
-  95% {background-color: lightslategrey;}
-  100% {background-color: darkslategrey;}
-}
+
 .open-modal {
   font-size: 1em;
   color: black;
@@ -168,3 +149,26 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
 .form-response {padding-left: 20px; background-color: lightgrey;}
 .errormsg {color: red; padding-left: 16px;}
 .wrap {padding-left: 16px;}
+
+@keyframes attention {
+  5% {background-color: lightslategrey;}
+  10% {background-color: darkslategrey;}
+  15% {background-color: lightslategrey;}
+  20% {background-color: darkslategrey;}
+  25% {background-color: lightslategrey;}
+  30% {background-color: darkslategrey;}
+  35% {background-color: lightslategrey;}
+  40% {background-color: darkslategrey;}
+  45% {background-color: lightslategrey;}
+  50% {background-color: darkslategrey;}
+  55% {background-color: lightslategrey;}
+  60% {background-color: darkslategrey;}
+  65% {background-color: lightslategrey;}
+  70% {background-color: darkslategrey;}
+  75% {background-color: lightslategrey;}
+  80% {background-color: darkslategrey;}
+  85% {background-color: lightslategrey;}
+  90% {background-color: darkslategrey;}
+  95% {background-color: lightslategrey;}
+  100% {background-color: darkslategrey;}
+}

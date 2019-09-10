@@ -42,7 +42,7 @@ if (!isset($_SESSION['uname'])) {
       ?>
     </header>
 
-    <!-- Sign Up Modal -->
+    <!-- Membership features that open in a modal. Sign Up Modal -->
     <div id="sign" class="modal">
       <span onclick="document.getElementById('sign').style.display='none'" class="close"
       title="Close Modal">&times;</span>
@@ -165,10 +165,33 @@ if (!isset($_SESSION['uname'])) {
       </form>
     </div>
 
+    <!-- The primary content of the page.  The game, directions, and top ten list. -->
     <main>
       <canvas id="breakoutCanvas">
         <p>Your browser does not support this feature.  Try upgrading your browser.</p>
       </canvas>
+
+      <div id="greeting"> 
+        <p id="greet">
+          <?php 
+          if (!isset($_SESSION['uname'])) {
+              echo 'Hello, creature! <button class="open-modal"
+              onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign up</button> or <button class="open-modal" 
+              onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button> 
+              to keep track of your best games. See if you have what it takes to join
+              the top ten list.  Good luck!';
+          } else {
+              echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
+
+              if (isset($_SESSION['champs'])) {
+                  echo 'Championships: ' . $_SESSION["champs"];
+              } else if (isset($_SESSION['hscore'])) {
+                  echo '<span id="high-score">High Score: ' . $_SESSION["hscore"] . '</span>';
+              }
+          }
+          ?>
+        </p>
+      </div>
 
       <div id="directions">
         <p id="new-game">Press <button id="new-button" onclick="restart()">Start</button> for a
@@ -186,29 +209,9 @@ if (!isset($_SESSION['uname'])) {
           <li>Be aware that bouncing the ball off the top of the screen shrinks the paddle.</li>
           <li>Have fun!</li>
         </ul>
-        <p style="color:white;"><span style="font-size:2em;">GamesDeal</span> <a style="color:white;" href="http://www.gamesdeal.com/?a-aid=brickball&amp;a_aid=brickball&amp;a_bid=ae830298" target="_top"><strong>3% Off Code</strong><br/>3% off code & free shipping  No minimum Purchase Requirement Code:gd3%off</a><img style="border:0" src="http://affiliate.gamesdeal.com/scripts/imp.php?a_aid=brickball&amp;a_bid=ae830298" width="1" height="1" alt="" /><strong style="font-size:2em;"> Visit GamesDeal</strong></p>
       </div>
 
-      <div id="greeting"> 
-        <p id="greet">
-          <?php 
-          if (!isset($_SESSION['uname'])) {
-              echo 'Hello, creature! <button class="open-modal"
-              onclick="document.getElementById(\'sign\').style.display=\'block\'">sign up</button> or <button class="open-modal" 
-              onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button> 
-              to keep track of your best games. See if you have what it takes to join
-              the top ten list.  Good luck!';
-          } else {
-              echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
-
-              if (isset($_SESSION['champs'])) {
-                  echo 'Championships: ' . $_SESSION["champs"];
-              } else if (isset($_SESSION['hscore'])) {
-                  echo '<span id="high-score">High Score: ' . $_SESSION["hscore"] . '</span>';
-              }
-          }
-          ?>
-        </p>
+      <div id="top-ten"> 
         <p id="top">
           <?php include 'topten.php'; ?>
         </p>
