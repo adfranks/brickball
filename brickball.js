@@ -108,13 +108,11 @@ Brick.prototype = new GameObj();
 Brick.prototype.constructor = Brick;
 
 Brick.prototype.draw = function () {
-
     if (this.exist === true) {
         var ctx = gameScreen.context;
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
-
 };
 
 // Creates all the bricks together.
@@ -122,29 +120,21 @@ function multiBricks(brickColumn, brickRow, brickWidth, brickHeight) {
     var c, r, color;
 
     for (c = 0; c < brickColumn; c++) {
-
         if (bricks[c] === undefined) {bricks[c] = [];}
-
         for (r = 0; r < brickRow; r++) {
-
             if (bricks[c][r] === undefined) {
-
                 if (r < 2) {color = "blue";}
                 else if (r > 1 && r < 4) {color = "green";}
                 else if (r > 3 && r < 6)  {color = "rgb(255, 52, 0)";}
                 else if (r < brickRow && r > (brickRow - 3)) {
                     color = "yellow";
                 }
-
                     bricks[c][r] = 
                     new Brick((c * (brickWidth + 4) + 4), (r * (brickHeight + 4) + 100), color, brickWidth, brickHeight); 
             } else {ball.collide(bricks[c][r]);}            
-
             bricks[c][r].draw();
         }
-
     }
-
 }
 
 function Paddle(x, y, color, width, height) {
@@ -157,7 +147,6 @@ Paddle.prototype.constructor = Paddle;
 
 Paddle.prototype.newPos = function() {
     this.velocityX = 0;
-
     if (gameScreen.key && gameScreen.key === 37 && this.x >= 12) {this.velocityX = -12;}
     else if (gameScreen.key && gameScreen.key === 37 && this.x < 12) {this.velocityX = -this.x;}
     else if (gameScreen.key && gameScreen.key === 39 && (this.x + this.width) <= (gameScreen.canvas.width - 12)) {
@@ -165,7 +154,6 @@ Paddle.prototype.newPos = function() {
     } else if (gameScreen.key && gameScreen.key === 39 && (this.x + this.width) > (gameScreen.canvas.width - 12)) {
         this.velocityX = gameScreen.canvas.width - (this.x + this.width);
     } 
-
     this.x += this.velocityX; 
 };
 
@@ -217,25 +205,20 @@ GameBall.prototype.angle = function(range, randomize) {
     var sameSpeed = this.acceleration * this.acceleration + this.acceleration * this.acceleration; 
 
     if (randomize === true) {
-
         if (range === "low" && (randomAngle > 0.5 || randomAngle < 0.8)) {
             this.lowAngle = randomAngle;    
         } else if (range === "high" && (randomAngle > 0.8 || randomAngle < 1.1)) {
             this.highAngle = randomAngle;
         } else {this.angle(range, randomize);}
-
     }
-
     if (range === "low") {
         this.velocityX = Math.cos(this.lowAngle) * Math.sqrt(sameSpeed);
         this.velocityY = Math.sin(this.lowAngle) * Math.sqrt(sameSpeed);
     }
-
     if (range === "high") {
         this.velocityX = Math.cos(this.highAngle) * Math.sqrt(sameSpeed);
         this.velocityY = Math.sin(this.highAngle) * Math.sqrt(sameSpeed);
     }
-
 };
 
 GameBall.prototype.collide = function(otherObj) {
@@ -244,16 +227,13 @@ GameBall.prototype.collide = function(otherObj) {
     /* Ball hits another game object that is not a former brick that was hit.
     Ensures the brick will only hit one at a time. */
     if (!(otherObj instanceof Brick && (otherObj.exist === false || this.brickHit === true))) {
-
         if ((this.x + this.radius) >= otherObj.x && (this.x - this.radius) <= (otherObj.x + otherObj.width) &&
         (this.y + this.radius) >= otherObj.y && (this.y - this.radius) <= (otherObj.y + otherObj.height)) {
-
             if (otherObj instanceof Brick) {
                 this.brickSound.play();
                 otherObj.exist = false; 
                 this.brickHit = true;
                 brickCount++;
-              
                 if (brickCount === (14 * 8)) {
                     gameScreen.nextLevel();
                 }
@@ -285,9 +265,7 @@ GameBall.prototype.collide = function(otherObj) {
                         this.hitBlue = true;
                         break;
                 }
-
             }
-
             if (otherObj instanceof Paddle) {
                 this.padSound.play();
                 this.brickHit = false; this.padHit++;
@@ -313,12 +291,9 @@ GameBall.prototype.collide = function(otherObj) {
                 if (((this.x + this.radius) < (otherObj.x + otherObj.width / 2) &&
                 this.velocityX > 0) || ((this.x - this.radius) > (otherObj.x + otherObj.width / 2) &&
                 this.velocityX < 0)) {this.velocityX = -this.velocityX;}
-
             }
-
             this.velocityY = -this.velocityY;
         } 
-
     }
 
     // Ball hits left or right side of game screen
@@ -338,12 +313,10 @@ GameBall.prototype.collide = function(otherObj) {
         if (this.topHit === 1) {
             pad.resize();
         }
-
     }
 
     // Ball hits bottom of game screen.  Check if game is over.
     if ((this.y - this.radius * 2) > gameScreen.canvas.height) {
-
         if (round < 5 && brickCount != 2 * (14 * 8)) { 
             round++;
             newRound(); 
@@ -354,7 +327,6 @@ GameBall.prototype.collide = function(otherObj) {
             if (count === 0) {  
                 count++;
                 newGame();
-
                 if (brickCount === 2 * (14 * 8)) {
                     this.victorySound.play();
                     updateChamp();
@@ -362,11 +334,8 @@ GameBall.prototype.collide = function(otherObj) {
                     this.overSound.play(); 
                     highScore(brickCount);
                 }
-
             }
-
         }
-
     }
 };
 
@@ -386,9 +355,7 @@ Text.prototype.draw = function () {
 };
 
 function updateGameScreen() {
-
     if (over !== undefined) {clearInterval(gameScreen.interval);}
-
     gameScreen.clear();
     multiBricks(14, 8, 64, 13);
     pad.newPos();
@@ -400,19 +367,16 @@ function updateGameScreen() {
         ball.newPos();
         ball.draw();
     }
-
     levelText.text = "Level: " + level;
     levelText.draw();
     ballText.text = "Ball: " + round;
     ballText.draw();
     score.text = "Score: " + brickCount;
     score.draw();
-
     if (over instanceof Text) {
         over.text = (brickCount === 2 * (14 * 8)) ? "Victorious!!!":"Game Over!";
         over.draw();
     }
-
 }
 
 // Close the modal
@@ -420,12 +384,10 @@ signModal = document.getElementById('sign');
 logModal = document.getElementById('login');
 
 window.onclick = function(event) {
-
     if (event.target == signModal || event.target == logModal) {
         signModal.style.display = "none";
         logModal.style.display = "none";
     }
-
 }
 
 // Make button pulse at end of game
@@ -438,11 +400,9 @@ function highScore(num) {
     xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
-
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById('high-score').innerHTML = this.responseText;
         }
-
     };
 
     xhttp.open("GET", "updatescore.php?q=" + num, true);
@@ -455,11 +415,9 @@ function updateChamp() {
     xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
-
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("high-score").innerHTML = this.responseText;
         }
-
     };
 
     xhttp.open("GET", "updatechamp.php", true);
