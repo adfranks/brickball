@@ -42,8 +42,7 @@ try {
     }
 
     echo "</table>";
-}
-catch(PDOException $e) {
+} catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 
