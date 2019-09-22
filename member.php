@@ -27,6 +27,7 @@
     $dbname = "adpfrank_db1";
 
     if ($_POST['psw'] === $_POST['psw-confirm']) {
+
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
