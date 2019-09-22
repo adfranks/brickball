@@ -18,12 +18,15 @@ if (!isset($_SESSION['uname'])) {
 <head>
   <meta charset="UTF-8" />
   <title>Brick Ball</title>
-  <meta name="keywords" content="brick ball, vintage, retro, video game, breakout, arkanoid, online game, web application" />
-  <meta name="description" content="A fun version of the vintage Breakout video game to be played in a web browser.  Use your keyboard to move the paddle and knock the ball into the bricks!" />
+  <meta name="keywords" content="brick ball, vintage, retro, video game, 
+  breakout, arkanoid, online game, web application" />
+  <meta name="description" content="A fun version of the vintage Breakout video
+  game to be played in a web browser.  Use your keyboard to move the paddle and
+  knock the ball into the bricks!" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="pragma" content="no-cache">
   <link rel="icon" href="images/brickball-icon.png">
-  <link rel="stylesheet" type="text/css" href="brickball.css">
+  <link rel="stylesheet" type="text/css" href="css/brickball.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -35,7 +38,7 @@ if (!isset($_SESSION['uname'])) {
       <?php 
       if (!isset($_SESSION['uname'])) {
           echo '<button onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign Up</button>
-          <button onclick="document.getElementById(\'login\').style.display=\'block\'">Log In</button>'; 
+          <button onclick="document.getElementById(\'login\').style.display=\'block\'">Log In</button>';
       } else {
           echo '<button onclick="location.href=\'logout.php\'">Log Out</button>';
       }
@@ -176,10 +179,11 @@ if (!isset($_SESSION['uname'])) {
           <?php 
           if (!isset($_SESSION['uname'])) {
               echo 'Hello, creature! <button class="open-modal"
-              onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign up</button> or <button class="open-modal" 
-              onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button> 
-              to keep track of your best games. See if you have what it takes to join
-              the top ten list.  Good luck!';
+	      onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign up</button> 
+	      or <button class="open-modal"
+              onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button>
+	      to keep track of your best games. See if you have what it takes to 
+	      join the top ten list.  Good luck!';
           } else {
               echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
 
@@ -188,6 +192,7 @@ if (!isset($_SESSION['uname'])) {
               } else if (isset($_SESSION['hscore'])) {
                   echo '<span id="high-score">High Score: ' . $_SESSION["hscore"] . '</span>';
               }
+
           }
           ?>
         </p>
@@ -237,7 +242,7 @@ if (!isset($_SESSION['uname'])) {
     </footer>
   </div>
 
-  <script src="brickball.js"></script>
+  <script src="js/brickball.js"></script>
 
 </body>
 
