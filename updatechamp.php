@@ -23,8 +23,7 @@ if (isset($_SESSION['uname'])) {
         $sql = $conn->prepare("UPDATE members SET championships=championships + 1, highscore=224 WHERE username='" . $_SESSION['uname'] . "'");
         $sql->execute();
         echo " <b>Victory!!! Championships: " . $_SESSION['champs'] . "</b>"; 
-    }
-    catch(PDOException $e) {
+    } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
 
