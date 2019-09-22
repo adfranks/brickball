@@ -1,3 +1,4 @@
+/* Start with a clean slate. */
 html, body, div, span, h1, p, a, strong, form, label, table,
 caption, tr, th, td, canvas, footer, header, nav {
   margin: 0;
@@ -7,6 +8,8 @@ caption, tr, th, td, canvas, footer, header, nav {
   font: inherit;
   vertical-align: baseline;
 }
+
+/* Basic elements */
 body {
   background-color: #f3f3f3;
   font-family: Lucida Grande, Lucida Sans Unicode, Calibri, Arial, sans-serif;
@@ -55,7 +58,7 @@ input[type=checkbox] {float: left;}
 p {padding: 30px; font-size: 1.2em;}
 a {color: black;}
 a:hover {color: blue;}
-ul {list-style-type: circle; margin-top: 0; padding-top: 0; padding-bottom: 20px;}
+ul {list-style-type: circle; margin-top: 0; padding-top: 0; padding-bottom: 20px; font-size: 1.1em;}
 div {box-sizing: border-box;}
 span.forgot {float: left; padding-top: 8px; font-size: 0.75em;}
 table {
@@ -70,6 +73,7 @@ th {font-variant: small-caps; font-weight: bold;}
 tr:nth-child(even) {background-color: darkslategrey;}
 tr:nth-child(odd), th {background-color: lightslategrey;}
 
+/* Elements with an id. */
 #container {margin: 0 auto; width: 996px;}
 #greeting {width: 100%;}
 #greet {text-align: justify;}
@@ -83,6 +87,7 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
   animation: attention 20s infinite;
 }
 
+/* Elements with a class. */
 .open-modal {
   font-size: 1em;
   color: black;
@@ -150,6 +155,7 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
 .errormsg {color: red; padding-left: 16px;}
 .wrap {padding-left: 16px;}
 
+/* keyframes for animations */
 @keyframes attention {
   5% {background-color: lightslategrey;}
   10% {background-color: darkslategrey;}
