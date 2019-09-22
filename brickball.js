@@ -1,4 +1,4 @@
-// Create the game
+// Start creating the game by declaring variables. 
 var pad, ball, bricks, brickCount, level, round, levelText, ballText, score, over,
 count, signModal, logModal;
 
@@ -42,7 +42,7 @@ function initialize() {
     if (level === 1) {round = 1;}
     if (brickCount === undefined) {brickCount = 0;} 
     pad = (level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15);
-    ball = (level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5); 
+    ball = (level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5);
 }
 
 function startRound() {
@@ -92,6 +92,7 @@ function GameObj(x, y, color, width, height, type) {
     this.height = height;
     this.type = type;
 }
+
 GameObj.prototype.draw = function () {
     var ctx = gameScreen.context;
     ctx.fillStyle = this.color;
@@ -102,45 +103,61 @@ function Brick(x, y, color, width, height) {
     GameObj.call(this, x, y, color, width, height);
     this.exist =  true;
 }
+
 Brick.prototype = new GameObj();
 Brick.prototype.constructor = Brick;
+
 Brick.prototype.draw = function () {
+
     if (this.exist === true) {
         var ctx = gameScreen.context;
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+
 };
 
 // Creates all the bricks together.
 function multiBricks(brickColumn, brickRow, brickWidth, brickHeight) {
     var c, r, color;
+
     for (c = 0; c < brickColumn; c++) {
+
         if (bricks[c] === undefined) {bricks[c] = [];}
+
         for (r = 0; r < brickRow; r++) {
+
             if (bricks[c][r] === undefined) {
+
                 if (r < 2) {color = "blue";}
                 else if (r > 1 && r < 4) {color = "green";}
                 else if (r > 3 && r < 6)  {color = "rgb(255, 52, 0)";}
                 else if (r < brickRow && r > (brickRow - 3)) {
                     color = "yellow";
                 }
+
                     bricks[c][r] = 
                     new Brick((c * (brickWidth + 4) + 4), (r * (brickHeight + 4) + 100), color, brickWidth, brickHeight); 
             } else {ball.collide(bricks[c][r]);}            
+
             bricks[c][r].draw();
         }
+
     }
+
 }
 
 function Paddle(x, y, color, width, height) {
     GameObj.call(this, x, y, color, width, height);
     this.velocityX = 0;
 }
+
 Paddle.prototype = new GameObj();
 Paddle.prototype.constructor = Paddle;
+
 Paddle.prototype.newPos = function() {
     this.velocityX = 0;
+
     if (gameScreen.key && gameScreen.key === 37 && this.x >= 12) {this.velocityX = -12;}
     else if (gameScreen.key && gameScreen.key === 37 && this.x < 12) {this.velocityX = -this.x;}
     else if (gameScreen.key && gameScreen.key === 39 && (this.x + this.width) <= (gameScreen.canvas.width - 12)) {
@@ -148,8 +165,10 @@ Paddle.prototype.newPos = function() {
     } else if (gameScreen.key && gameScreen.key === 39 && (this.x + this.width) > (gameScreen.canvas.width - 12)) {
         this.velocityX = gameScreen.canvas.width - (this.x + this.width);
     } 
+
     this.x += this.velocityX; 
 };
+
 Paddle.prototype.resize = function() {
     this.width = this.width / 2;
 };
@@ -176,8 +195,10 @@ function GameBall(x, y, color, width, acceleration) {
     this.levelSound = new Sound("audio/levelSound");
     this.victorySound = new Sound("audio/victorySound");
 }
+
 GameBall.prototype = new GameObj();
 GameBall.prototype.constructor = GameBall;
+
 GameBall.prototype.draw = function() {
     var ctx = gameScreen.context;
     ctx.beginPath();
@@ -185,13 +206,16 @@ GameBall.prototype.draw = function() {
     ctx.fillStyle = this.color;
     ctx.fill();
 };
+
 GameBall.prototype.newPos = function() {
         this.x += this.velocityX;
         this.y += this.velocityY;
 };
+
 GameBall.prototype.angle = function(range, randomize) {
     var randomAngle = Math.random() + 0.1;
     var sameSpeed = this.acceleration * this.acceleration + this.acceleration * this.acceleration; 
+
     if (randomize === true) {
 
         if (range === "low" && (randomAngle > 0.5 || randomAngle < 0.8)) {
@@ -213,6 +237,7 @@ GameBall.prototype.angle = function(range, randomize) {
     }
 
 };
+
 GameBall.prototype.collide = function(otherObj) {
     var randomize;
 
@@ -260,6 +285,7 @@ GameBall.prototype.collide = function(otherObj) {
                         this.hitBlue = true;
                         break;
                 }
+
             }
 
             if (otherObj instanceof Paddle) {
@@ -360,7 +386,9 @@ Text.prototype.draw = function () {
 };
 
 function updateGameScreen() {
+
     if (over !== undefined) {clearInterval(gameScreen.interval);}
+
     gameScreen.clear();
     multiBricks(14, 8, 64, 13);
     pad.newPos();
@@ -372,26 +400,32 @@ function updateGameScreen() {
         ball.newPos();
         ball.draw();
     }
+
     levelText.text = "Level: " + level;
     levelText.draw();
     ballText.text = "Ball: " + round;
     ballText.draw();
     score.text = "Score: " + brickCount;
     score.draw();
+
     if (over instanceof Text) {
         over.text = (brickCount === 2 * (14 * 8)) ? "Victorious!!!":"Game Over!";
         over.draw();
     }
+
 }
 
 // Close the modal
 signModal = document.getElementById('sign');
 logModal = document.getElementById('login');
+
 window.onclick = function(event) {
+
     if (event.target == signModal || event.target == logModal) {
         signModal.style.display = "none";
         logModal.style.display = "none";
     }
+
 }
 
 // Make button pulse at end of game
@@ -402,11 +436,15 @@ function newGame() {
 // Ajax for high score
 function highScore(num) {
     xhttp = new XMLHttpRequest();
+
     xhttp.onreadystatechange = function() {
+
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById('high-score').innerHTML = this.responseText;
         }
+
     };
+
     xhttp.open("GET", "updatescore.php?q=" + num, true);
     xhttp.send();
 }
@@ -415,11 +453,15 @@ function highScore(num) {
 // Ajax for championships
 function updateChamp() {
     xhttp = new XMLHttpRequest();
+
     xhttp.onreadystatechange = function() {
+
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("high-score").innerHTML = this.responseText;
         }
+
     };
+
     xhttp.open("GET", "updatechamp.php", true);
     xhttp.send();
 }
