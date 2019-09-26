@@ -1,0 +1,182 @@
+/* Start with a clean slate. */
+html, body, div, span, h1, p, a, strong, form, label, table,
+caption, tr, th, td, canvas, footer, header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Basic elements */
+body {
+  background-color: #f3f3f3;
+  font-family: Lucida Grande, Lucida Sans Unicode, Calibri, Arial, sans-serif;
+  letter-spacing: 1px; 
+}
+header, main, footer, table, #directions {border-radius: 7px;}
+header, footer, nav {display: block;}
+header, footer {
+  font-size: 1.5em; 
+  text-transform: uppercase;
+  letter-spacing: 3.5px; 
+  background-color: darkslategrey;
+  margin: 15px 0;
+}
+header button, footer button {vertical-align: text-top;}
+h1 {
+  background-color: lightgrey; 
+  display: inline; 
+  font-size: 2em; 
+  padding: 0 16px;
+  border-radius: 7px 0px 0px 7px;
+}
+footer h1 {font-size: 1.5em;}
+canvas {background-color: black;}
+main {margin: 0 auto 15px auto; width: 956px; background-color: lightgrey; padding: 20px;}
+button {
+  color: #f3f3f3;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: darkslategrey; 
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+button:hover {background-color: blue;}
+fieldset {border-radius: 5px;}
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+input[type=checkbox] {float: left;}
+p {padding: 30px; font-size: 1.2em;}
+a {color: black;}
+a:hover {color: blue;}
+ul {list-style-type: circle; margin-top: 0; padding-top: 0; padding-bottom: 20px; font-size: 1.1em;}
+div {box-sizing: border-box;}
+span.forgot {float: left; padding-top: 8px; font-size: 0.75em;}
+table {
+  background-color: #132020; 
+  color: white;
+  border-spacing: 15px; 
+  margin-left: 15px;
+  width: 92%;
+}
+th, td {text-align: center; padding: 5px 10px;}
+th {font-variant: small-caps; font-weight: bold;}
+tr:nth-child(even) {background-color: darkslategrey;}
+tr:nth-child(odd), th {background-color: lightslategrey;}
+
+/* Elements with an id. */
+#container {margin: 0 auto; width: 996px;}
+#greeting {width: 100%;}
+#greet {text-align: justify;}
+#directions {float: left; width: 50%; padding-right: 15px; background-color: lightslategrey;}
+#directions b {font-size: 1.2em;}
+#top-ten {float: right; width: 50%; padding-left: 15px;}
+#top {padding: 0 30px;}
+#new-game {padding-bottom: 0;}
+#game-end:hover {animation: none; background-color: blue;}
+#game-end {
+  animation: attention 20s infinite;
+}
+
+/* Elements with a class. */
+.open-modal {
+  font-size: 1em;
+  color: black;
+  font-weight: normal;
+  background-color: lightgrey; 
+  border-radius: 0;
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+  cursor: pointer;
+}
+.open-modal:hover {background-color: lightgrey; color: blue;}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); /* Fallback */ 
+  background-color: rgba(0,0,0,0.6);
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #f3f3f3;
+  min-width: 140px;
+  margin: 5% auto 15% auto;
+  padding: 16px;
+  border: thin solid lightgrey;
+  border-radius: 5px;
+  width: 30%;
+}
+.tryagain {
+  min-width: 140px;
+  padding: 16px;
+  width: 30%;
+}
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  color: rgb(0,0,0);
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover, .close:focus {
+  color: rgb(255, 52, 0);
+  cursor: pointer;
+}
+.modal button, .tryagain button {
+  margin-top: 8px;
+  width: 46%;
+  float: left;
+}
+.cancelbtn {background-color: rgb(255, 52, 0); margin-right: 8%;}
+.cancelbtn:hover {background-color: red;}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.form-response {padding-left: 20px; background-color: lightgrey;}
+.errormsg {color: red; padding-left: 16px;}
+.wrap {padding-left: 16px;}
+
+/* keyframes for animations */
+@keyframes attention {
+  5% {background-color: lightslategrey;}
+  10% {background-color: darkslategrey;}
+  15% {background-color: lightslategrey;}
+  20% {background-color: darkslategrey;}
+  25% {background-color: lightslategrey;}
+  30% {background-color: darkslategrey;}
+  35% {background-color: lightslategrey;}
+  40% {background-color: darkslategrey;}
+  45% {background-color: lightslategrey;}
+  50% {background-color: darkslategrey;}
+  55% {background-color: lightslategrey;}
+  60% {background-color: darkslategrey;}
+  65% {background-color: lightslategrey;}
+  70% {background-color: darkslategrey;}
+  75% {background-color: lightslategrey;}
+  80% {background-color: darkslategrey;}
+  85% {background-color: lightslategrey;}
+  90% {background-color: darkslategrey;}
+  95% {background-color: lightslategrey;}
+  100% {background-color: darkslategrey;}
+}
