@@ -6,6 +6,9 @@ count, signModal, logModal;
 var brickBall = {
     canvas: document.getElementById("breakoutCanvas"),
     level: 1, 
+    overSound: new Sound("audio/overSound"),
+    levelSound: new Sound("audio/levelSound"),
+    victorySound: new Sound("audio/victorySound"),
     gameScreen: function() {
         this.canvas.width = 956;
         this.canvas.height = 600;
@@ -42,6 +45,27 @@ var brickBall = {
         this.init();
         document.getElementById('game-end').id = 'new-button';
     },
+    endRound: function() {
+        if (round < 5 && brickCount != 2 * (14 * 8)) { 
+            round++;
+            brickBall.newRound(); 
+        } else {
+            over = new Text(310, 400, "white", "bold 50");
+
+            // Ensure end sound does not loop.  Check if game was won.  Update db via ajax.
+            if (count === 0) {  
+                count++;
+                brickBall.newGame();
+                if (brickCount === 2 * (14 * 8)) {
+                    brickBall.victorySound.play();
+                    brickBall.updateChamp();
+                } else {
+                    brickBall.overSound.play(); 
+                    brickBall.highScore(brickCount);
+                }
+            }
+        }
+    },
     newRound: function() {
         pad = (this.level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15);
         ball = (this.level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5); 
@@ -51,7 +75,7 @@ var brickBall = {
         document.getElementById('new-button').id = 'game-end'; // Button pulse at end of game.
     },
     nextLevel: function() {
-        ball.levelSound.play();
+        this.levelSound.play();
         clearInterval(this.interval);
         brickBall.level = 2; 
         brickBall.init();

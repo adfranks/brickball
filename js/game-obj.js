@@ -71,13 +71,9 @@ function GameBall(x, y, color, width, acceleration) {
     this.hitOrange = false;
     this.hitGreen = false;
     this.hitBlue = false;
-    this.sound = new Sound("audio/edgeSound");
-    this.topSound = new Sound("audio/edgeSound");
     this.padSound = new Sound("audio/padSound");
+    this.wallSound = new Sound("audio/edgeSound");
     this.brickSound = new Sound("audio/brickSound");
-    this.overSound = new Sound("audio/overSound");
-    this.levelSound = new Sound("audio/levelSound");
-    this.victorySound = new Sound("audio/victorySound");
 }
 
 GameBall.prototype = new GameObj();
@@ -195,14 +191,14 @@ GameBall.prototype.wall = function() {
 
     // Ball hits left or right side of game wall
     if ((this.x + this.radius) >= brickBall.canvas.width || (this.x - this.radius) <= 0) {
-        this.sound.play();
+        this.wallSound.play();
         this.velocityX = -this.velocityX;
         this.brickHit = false;
     }
 
     // Ball hits top of game screen
     if ((this.y - this.radius) < 0) {
-        this.topSound.play();
+        this.wallSound.play();
         this.velocityY = -this.velocityY;
         this.brickHit = false;
         this.topHit++;
@@ -215,8 +211,8 @@ GameBall.prototype.wall = function() {
 
 // Method for when the ball hits something.
 GameBall.prototype.collide = function(otherObj) {
-    /* Ball hits another game object that is not a former brick that was hit.
-    Ensures the brick will only hit one at a time. */
+
+    // Ball hits another game object that is not a former brick that was hit previously.
     if (!(otherObj instanceof Brick && (otherObj.exist === false || this.brickHit === true))) {
         if ((this.x + this.radius) >= otherObj.x && (this.x - this.radius) <= (otherObj.x + otherObj.width) &&
         (this.y + this.radius) >= otherObj.y && (this.y - this.radius) <= (otherObj.y + otherObj.height)) {
@@ -233,26 +229,24 @@ GameBall.prototype.collide = function(otherObj) {
     }
     this.wall();
 
-    // Ball goes beyond bottom of game screen.  Check if game is over.
+    // Ball goes beyond bottom of game screen.
     if ((this.y - this.radius * 2) > brickBall.canvas.height) {
-        if (round < 5 && brickCount != 2 * (14 * 8)) { 
-            round++;
-            brickBall.newRound(); 
-        } else {
-            over = new Text(310, 400, "white", "bold 50");
-
-            // Ensure end sound does not loop.  Check if game was won.  Update db via ajax.
-            if (count === 0) {  
-                count++;
-                brickBall.newGame();
-                if (brickCount === 2 * (14 * 8)) {
-                    this.victorySound.play();
-                    brickBall.updateChamp();
-                } else {
-                    this.overSound.play(); 
-                    brickBall.highScore(brickCount);
-                }
-            }
-        }
+        brickBall.endRound();
     }
+};
+
+// Text class for writing on the game screen.
+function Text(x, y, color, fontPx) {
+    GameObj.call(this, x, y, color);
+    this.fontPx = fontPx;
+}
+
+Text.prototype = new GameObj();
+Text.prototype.constructor = Text;
+
+Text.prototype.draw = function () {
+    var ctx = brickBall.context;
+    ctx.fillStyle = this.color;
+    ctx.font = this.fontPx + "px Verdana";
+    ctx.fillText(this.text, this.x, this.y);
 };
