@@ -28,6 +28,7 @@ if (!isset($_SESSION['uname'])) {
   <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/sound.js"></script>
 </head>
 
 <body onload="brickBall.init()">
@@ -244,7 +245,6 @@ if (!isset($_SESSION['uname'])) {
 
   <script src="js/brickball.js"></script>
   <script src="js/game-obj.js"></script>
-  <script src="js/sound-text.js"></script>
   <script src="js/membership.js"></script>
 
 </body>
