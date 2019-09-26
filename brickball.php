@@ -30,7 +30,7 @@ if (!isset($_SESSION['uname'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="initialize()">
+<body onload="brickBall.init()">
 
   <div id="container">
     <header>
@@ -44,6 +44,64 @@ if (!isset($_SESSION['uname'])) {
       }
       ?>
     </header>
+
+    <!-- The primary content of the page.  The game, directions, and top ten list. -->
+    <main>
+      <canvas id="breakoutCanvas">
+        <p>Your browser does not support this feature.  Try upgrading your browser.</p>
+      </canvas>
+
+      <div id="greeting"> 
+        <p id="greet">
+          <?php 
+          if (!isset($_SESSION['uname'])) {
+              echo 'Hello, creature! <button class="open-modal"
+	      onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign up</button> 
+	      or <button class="open-modal"
+              onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button>
+	      to keep track of your best games. See if you have what it takes to 
+	      join the top ten list.  Good luck!';
+          } else {
+              echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
+
+              if (isset($_SESSION['champs'])) {
+                  echo 'Championships: ' . $_SESSION["champs"];
+              } else if (isset($_SESSION['hscore'])) {
+                  echo '<span id="high-score">High Score: ' . $_SESSION["hscore"] . '</span>';
+              }
+
+          }
+          ?>
+        </p>
+      </div>
+
+      <div id="directions">
+        <p id="new-game">Press <button id="new-button" onclick="brickBall.restart()">Start</button> for a
+        new game.</p>
+        <p><b>How to Play:</b>  Clear all the bricks by bouncing the ball 
+        into them.</p>
+        <ul>
+          <li>Press the "s" key to serve the ball.</li>
+          <li>Left and right arrows move the paddle.</li>  
+          <li>Use the paddle to hit the ball into the bricks.</li> 
+          <li>If you miss the ball, you lose the ball.</li>
+          <li>You get 5 balls to clear all the bricks.</li>
+          <li>If you succeed, it's on to the second and final level!</li>
+          <li>To keep you on your toes, the ball speeds up after encountering a new color.</li>
+          <li>Be aware that bouncing the ball off the top of the screen shrinks the paddle.</li>
+          <li>Have fun!</li>
+        </ul>
+      </div>
+
+      <div id="top-ten"> 
+        <p id="top">
+          <?php include 'topten.php'; ?>
+        </p>
+      </div>
+
+      <div class="clearfix"></div>
+
+    </main>
 
     <!-- Membership features that open in a modal. Sign Up Modal -->
     <div id="sign" class="modal">
@@ -168,64 +226,6 @@ if (!isset($_SESSION['uname'])) {
       </form>
     </div>
 
-    <!-- The primary content of the page.  The game, directions, and top ten list. -->
-    <main>
-      <canvas id="breakoutCanvas">
-        <p>Your browser does not support this feature.  Try upgrading your browser.</p>
-      </canvas>
-
-      <div id="greeting"> 
-        <p id="greet">
-          <?php 
-          if (!isset($_SESSION['uname'])) {
-              echo 'Hello, creature! <button class="open-modal"
-	      onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign up</button> 
-	      or <button class="open-modal"
-              onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button>
-	      to keep track of your best games. See if you have what it takes to 
-	      join the top ten list.  Good luck!';
-          } else {
-              echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
-
-              if (isset($_SESSION['champs'])) {
-                  echo 'Championships: ' . $_SESSION["champs"];
-              } else if (isset($_SESSION['hscore'])) {
-                  echo '<span id="high-score">High Score: ' . $_SESSION["hscore"] . '</span>';
-              }
-
-          }
-          ?>
-        </p>
-      </div>
-
-      <div id="directions">
-        <p id="new-game">Press <button id="new-button" onclick="restart()">Start</button> for a
-        new game.</p>
-        <p><b>How to Play:</b>  Clear all the bricks by bouncing the ball 
-        into them.</p>
-        <ul>
-          <li>Click the game screen to serve the ball.</li>
-          <li>Left and right arrows move the paddle.</li>  
-          <li>Use the paddle to hit the ball into the bricks.</li> 
-          <li>If you miss the ball, you lose the ball.</li>
-          <li>You get 5 balls to clear all the bricks.</li>
-          <li>If you succeed, it's on to the second and final level!</li>
-          <li>To keep you on your toes, the ball speeds up after encountering a new color.</li>
-          <li>Be aware that bouncing the ball off the top of the screen shrinks the paddle.</li>
-          <li>Have fun!</li>
-        </ul>
-      </div>
-
-      <div id="top-ten"> 
-        <p id="top">
-          <?php include 'topten.php'; ?>
-        </p>
-      </div>
-
-      <div class="clearfix"></div>
-
-    </main>
-
     <footer>
       <h1>brick ball</h1>
       <?php 
@@ -243,6 +243,9 @@ if (!isset($_SESSION['uname'])) {
   </div>
 
   <script src="js/brickball.js"></script>
+  <script src="js/game-obj.js"></script>
+  <script src="js/sound-text.js"></script>
+  <script src="js/membership.js"></script>
 
 </body>
 
