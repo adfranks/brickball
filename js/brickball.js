@@ -1,6 +1,5 @@
 // Start creating the game by declaring variables. 
-var pad, ball, bricks, brickCount, round, levelText, ballText, score, over,
-count, signModal, logModal;
+var pad, ball, bricks, brickCount, round, levelText, ballText, score, over, count;
 
 // Object literal for the game with properties and methods.
 var brickBall = {

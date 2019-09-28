@@ -93,6 +93,13 @@ GameBall.prototype.newPos = function() {
 };
 
 GameBall.prototype.serve = function () {
+    var i, modal = document.getElementsByClassName("modal");
+    
+    for (i = 0; i < modal.length; i++) {
+        if (modal[i].style.display == "block") {
+            return;
+        } 
+    }    
     this.velocityX = this.acceleration;
     this.velocityY = this.acceleration;
 };

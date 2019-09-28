@@ -1,10 +1,11 @@
 // Close the modal for the membership features.
-signModal = document.getElementById('sign');
-logModal = document.getElementById('login');
 
 window.onclick = function(event) {
-    if (event.target == signModal || event.target == logModal) {
-        signModal.style.display = "none";
-        logModal.style.display = "none";
-    }
+    var i, modal = document.getElementsByClassName("modal");
+    
+    for (i = 0; i < modal.length; i++) {
+        if (event.target == modal[i]) {
+            event.target.style.display = "none";
+        } 
+    }    
 }
