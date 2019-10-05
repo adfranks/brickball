@@ -29,6 +29,7 @@ if (!isset($_SESSION['uname'])) {
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/sound.js"></script>
+  <script src="js/game-obj.js"></script>
 </head>
 
 <body onload="brickBall.init()">
@@ -57,11 +58,11 @@ if (!isset($_SESSION['uname'])) {
           <?php 
           if (!isset($_SESSION['uname'])) {
               echo 'Hello, creature! <button class="open-modal"
-	      onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign up</button> 
-	      or <button class="open-modal"
-              onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button>
-	      to keep track of your best games. See if you have what it takes to 
-	      join the top ten list.  Good luck!';
+              onclick="document.getElementById(\'sign\').style.display=\'block\'">Sign up</button> 
+              or <button class="open-modal"
+                    onclick="document.getElementById(\'login\').style.display=\'block\'">log in</button>
+              to keep track of your best games. See if you have what it takes to 
+              join the top ten list.  Good luck!';
           } else {
               echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
 
@@ -244,7 +245,6 @@ if (!isset($_SESSION['uname'])) {
   </div>
 
   <script src="js/brickball.js"></script>
-  <script src="js/game-obj.js"></script>
   <script src="js/membership.js"></script>
 
 </body>
