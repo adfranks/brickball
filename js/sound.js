@@ -1,4 +1,4 @@
-// Custom types for the game with properties and methods.
+// Custom reference type with properties and methods for audio in the game.
 function Sound(src) {
     var audioElement = document.createElement("audio"),
     isSupp = audioElement.canPlayType('audio/ogg'),

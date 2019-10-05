@@ -211,7 +211,7 @@ GameBall.prototype.wall = function() {
         this.topHit++;
 
         if (this.topHit === 1) {
-            pad.resize();
+            brickBall.pad.resize();
         }
     }
 };

@@ -1,5 +1,5 @@
 // Start creating the game by declaring variables. 
-var pad, ball, bricks, brickCount, round, levelText, ballText, score, over, count;
+var brickCount, round, over;
 
 // Object literal for the game with properties and methods.
 var brickBall = {
@@ -8,6 +8,13 @@ var brickBall = {
     overSound: new Sound("audio/overSound"),
     levelSound: new Sound("audio/levelSound"),
     victorySound: new Sound("audio/victorySound"),
+    pad: (this.level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15),
+    ball: (this.level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5),
+    bricks: [],
+    count: 0,
+    levelText: new Text(14, 55, "white", 15),
+    ballText: new Text(102, 55, "white", 15),
+    score: new Text(177, 55, "white", 15),
     gameScreen: function() {
         this.canvas.width = 956;
         this.canvas.height = 600;
@@ -16,16 +23,9 @@ var brickBall = {
     },
     init: function() {
         this.gameScreen();
-        levelText = new Text(14, 55, "white", 15);
-        ballText = new Text(102, 55, "white", 15);
-        score = new Text(177, 55, "white", 15);
-        bricks = [];
         brickBall.multiBricks(14, 8, 64, 13);
-        count = 0;
-        if (this.level === 1) {round = 1;}
+        if (this.level === 1) {round = 1;} // Ensure user of rounds entering level two.
         if (brickCount === undefined) {brickCount = 0;} 
-        pad = (this.level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15);
-        ball = (this.level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5);
         window.addEventListener("keydown", function(e) {
             brickBall.key = e.keyCode; 
         });
@@ -52,8 +52,8 @@ var brickBall = {
             over = new Text(310, 400, "white", "bold 50");
 
             // Ensure end sound does not loop.  Check if game was won.  Update db via ajax.
-            if (count === 0) {  
-                count++;
+            if (this.count === 0) {  
+                this.count++;
                 brickBall.newGame();
                 if (brickCount === 2 * (14 * 8)) {
                     brickBall.victorySound.play();
@@ -66,8 +66,8 @@ var brickBall = {
         }
     },
     newRound: function() {
-        pad = (this.level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15);
-        ball = (this.level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5); 
+        this.pad = (this.level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15);
+        this.ball = (this.level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5); 
         brickBall.multiBricks(14, 8, 64, 13);
     },
     newGame: function() {
@@ -83,19 +83,19 @@ var brickBall = {
         var c, r, color;
 
         for (c = 0; c < brickColumn; c++) {
-            if (bricks[c] === undefined) {bricks[c] = [];}
+            if (this.bricks[c] === undefined) {this.bricks[c] = [];}
             for (r = 0; r < brickRow; r++) {
-                if (bricks[c][r] === undefined) {
+                if (this.bricks[c][r] === undefined) {
                     if (r < 2) {color = "blue";}
                     else if (r > 1 && r < 4) {color = "green";}
                     else if (r > 3 && r < 6)  {color = "rgb(255, 52, 0)";}
                     else if (r < brickRow && r > (brickRow - 3)) {
                         color = "yellow";
                     }
-                        bricks[c][r] = 
+                        this.bricks[c][r] = 
                         new Brick((c * (brickWidth + 4) + 4), (r * (brickHeight + 4) + 100), color, brickWidth, brickHeight); 
-                } else {ball.collide(bricks[c][r]);}            
-                bricks[c][r].draw();
+                } else {this.ball.collide(this.bricks[c][r]);}            
+                this.bricks[c][r].draw();
             }
         }
     },
@@ -124,28 +124,28 @@ var brickBall = {
         xhttp.send();
     },
     updateGameScreen: function() {
-        if (over !== undefined) {clearInterval(this.interval);}
+        if (over !== undefined) {clearInterval(brickBall.interval);}
         brickBall.clear();
         brickBall.multiBricks(14, 8, 64, 13);
-        pad.newPos();
-        pad.draw();
+        brickBall.pad.newPos();
+        brickBall.pad.draw();
 
         // Ensure blip sound does not repeat at end of game.
         if (over == undefined) {
-            ball.collide(pad);
-            ball.newPos();
-            ball.draw();
+            brickBall.ball.collide(brickBall.pad);
+            brickBall.ball.newPos();
+            brickBall.ball.draw();
         }
-        levelText.text = "Level: " + brickBall.level;
-        levelText.draw();
-        ballText.text = "Ball: " + round;
-        ballText.draw();
-        score.text = "Score: " + brickCount;
-        score.draw();
+        brickBall.levelText.text = "Level: " + brickBall.level;
+        brickBall.levelText.draw();
+        brickBall.ballText.text = "Ball: " + round;
+        brickBall.ballText.draw();
+        brickBall.score.text = "Score: " + brickCount;
+        brickBall.score.draw();
         if (over instanceof Text) {
             over.text = (brickCount === 2 * (14 * 8)) ? "Victorious!!!":"Game Over!";
             over.draw();
         }
-        if (brickBall.key && brickBall.key === 83 && ball.velocityY === 0) {ball.serve();} 
+        if (brickBall.key && brickBall.key === 83 && brickBall.ball.velocityY === 0) {brickBall.ball.serve();} 
     }
 };
