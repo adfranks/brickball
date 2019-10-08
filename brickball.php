@@ -28,8 +28,6 @@ if (!isset($_SESSION['uname'])) {
   <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="js/sound.js"></script>
-  <script src="js/game-obj.js"></script>
 </head>
 
 <body onload="brickBall.init()">
@@ -77,25 +75,27 @@ if (!isset($_SESSION['uname'])) {
         </p>
       </div>
 
-      <div id="directions">
-        <p id="new-game">Press <button id="new-button" onclick="brickBall.restart()">Start</button> for a
-        new game.</p>
-        <p><b>How to Play:</b>  Clear all the bricks by bouncing the ball 
-        into them.</p>
-        <ul>
-          <li>Press the "s" key to serve the ball.</li>
-          <li>Left and right arrows move the paddle.</li>  
-          <li>Use the paddle to hit the ball into the bricks.</li> 
-          <li>If you miss the ball, you lose the ball.</li>
-          <li>You get 5 balls to clear all the bricks.</li>
-          <li>If you succeed, it's on to the second and final level!</li>
-          <li>To keep you on your toes, the ball speeds up after encountering a new color.</li>
-          <li>Be aware that bouncing the ball off the top of the screen shrinks the paddle.</li>
-          <li>Have fun!</li>
-        </ul>
+      <div id="col-1">
+        <div id="directions">
+          <p id="new-game">Press <button id="new-button" onclick="brickBall.restart()">Start</button> for a
+          new game.</p>
+          <p id="objective"><b>How to Play</b>:  Clear all the bricks by bouncing the ball 
+          into them.</p>
+          <ul>
+            <li>Press the "s" key to serve the ball.</li>
+            <li>Left and right arrows move the paddle.</li>  
+            <li>Use the paddle to hit the ball into the bricks.</li> 
+            <li>If you miss the ball, you lose the ball.</li>
+            <li>You get 5 balls to clear all the bricks.</li>
+            <li>If you succeed, it's on to the second and final level!</li>
+            <li>To keep you on your toes, the ball speeds up after encountering a new color.</li>
+            <li>Be aware that bouncing the ball off the top of the screen shrinks the paddle.</li>
+            <li>Have fun!</li>
+          </ul>
+        </div>
       </div>
 
-      <div id="top-ten"> 
+      <div id="col-2"> 
         <p id="top">
           <?php include 'topten.php'; ?>
         </p>
@@ -244,6 +244,8 @@ if (!isset($_SESSION['uname'])) {
     </footer>
   </div>
 
+  <script src="js/sound.js"></script>
+  <script src="js/game-obj.js"></script>
   <script src="js/brickball.js"></script>
   <script src="js/membership.js"></script>
 
