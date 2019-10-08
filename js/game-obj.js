@@ -130,8 +130,8 @@ GameBall.prototype.brick = function(hitBrick) {
     this.brickSound.play();
     hitBrick.exist = false; 
     this.brickHit = true;
-    brickCount++;
-    if (brickCount === (14 * 8)) {
+    brickBall.brickCount++;
+    if (brickBall.brickCount === (14 * 8)) {
         brickBall.nextLevel();
     }
 
