@@ -57,20 +57,26 @@ input[type=text], input[type=password], input[type=email] {
   box-sizing: border-box;
 }
 input[type=checkbox] {float: left;}
-p {padding: 30px; font-size: 1.2em;}
+p {font-size: 1.2em;}
 a {color: black;}
 a:hover {color: blue;}
-ul {list-style-type: circle; margin-top: 0; padding-top: 0; padding-bottom: 20px; font-size: 1.1em;}
+ul {
+  list-style-type: circle; 
+  list-style-position: inside; 
+  margin: 0; 
+  padding: 0; 
+  font-size: 1.1em;
+}
 div {box-sizing: border-box;}
 span.forgot {float: left; padding-top: 8px; font-size: 0.75em;}
 table {
   background-color: #132020; 
   color: white;
-  border-spacing: 15px; 
-  margin-left: 15px;
-  width: 92%;
+  border-spacing: 10px; 
+  width: 96%;
+  margin: auto;
 }
-th, td {text-align: center; padding: 5px 10px;}
+th, td {text-align: center; padding: 5px;}
 th {font-variant: small-caps; font-weight: bold;}
 tr:nth-child(even) {background-color: darkslategrey;}
 tr:nth-child(odd), th {background-color: lightslategrey;}
@@ -78,12 +84,17 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
 /* Elements with an id. */
 #container {margin: 0 auto; width: 996px;}
 #greeting {width: 100%;}
-#greet {text-align: justify;}
-#directions {float: left; width: 50%; padding-right: 15px; background-color: lightslategrey;}
-#directions b {font-size: 1.2em;}
-#top-ten {float: right; width: 50%; padding-left: 15px;}
-#top {padding: 0 30px;}
-#new-game {padding-bottom: 0;}
+#greet {padding: 30px; text-align: justify; font-size: 1em;}
+#col-1 {float: left; width: 50%;}
+#col-1 b {font-size: 1.5em;}
+#col-2 {float: left; width: 50%;}
+#directions {
+  background-color: lightslategrey; 
+  width: 96%; 
+  margin: auto;
+  padding: 30px;
+}
+#objective {padding: 30px 0px; font-size: 1em;}
 #game-end:hover {animation: none; background-color: blue;}
 #game-end {
   animation: attention 20s infinite;
