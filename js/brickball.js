@@ -8,13 +8,6 @@ var brickBall = {
     levelText: new Text(14, 55, "white", 15),
     ballText: new Text(102, 55, "white", 15),
     score: new Text(177, 55, "white", 15),
-    level: 1, 
-    round: 1,
-    brickCount: 0,
-    end: false,
-    pad: (this.level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15),
-    ball: (this.level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5),
-    bricks: [],
     gameScreen: function() {
         this.canvas.width = 956;
         this.canvas.height = 600;
@@ -22,8 +15,14 @@ var brickBall = {
         this.interval = setInterval(this.updateGameScreen, 20);
     },
     init: function() {
+        this.end = false;
+        this.level = (this.level === 2) ? 2 : 1;
+        this.round = 1;
+        this.brickCount = 0;
+        this.bricks = [];
+        this.pad = (this.level !== 2) ? new Paddle(441, 585, "white", 75, 15):new Paddle(441, 585, "white", 65, 15);
+        this.ball = (this.level !== 2) ? new GameBall(350, 350, "white", 10, 7):new GameBall(350, 350, "white", 10, 7.5);
         this.gameScreen();
-        if (this.level === 1) {this.round = 1;} // Ensure user doesn't gain rounds entering level two.
         window.addEventListener("keydown", function(e) {
             brickBall.key = e.keyCode; 
         });
@@ -36,10 +35,6 @@ var brickBall = {
     },
     restart: function() {
         clearInterval(this.interval);
-        this.end = false;
-        this.brickCount = 0;
-        this.level = 1;
-        this.bricks = [];
         this.newRound();
         this.init();
         document.getElementById('game-end').id = 'new-button';
@@ -75,8 +70,8 @@ var brickBall = {
         if (newButton) {newButton.id = 'game-end';} // Button pulse at end of game.
     },
     nextLevel: function() {
-        this.levelSound.play();
         clearInterval(this.interval);
+        brickBall.levelSound.play();
         brickBall.level = 2; 
         brickBall.init();
     },
@@ -140,6 +135,7 @@ var brickBall = {
         if (brickBall.end === true) {
             brickBall.over.draw();
             clearInterval(brickBall.interval);
+            brickBall.level = 1;
         } 
         if (brickBall.key && brickBall.key === 83 && brickBall.ball.velocityY === 0) {brickBall.ball.serve();} 
     }
