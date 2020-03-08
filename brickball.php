@@ -244,6 +244,7 @@ if (!isset($_SESSION['uname'])) {
     </footer>
   </div>
 
+  <script src="js/mobile.js"></script>
   <script src="js/sound.js"></script>
   <script src="js/game-obj.js"></script>
   <script src="js/brickball.js"></script>
