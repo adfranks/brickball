@@ -26,7 +26,7 @@
     $expiry = strtotime("+24 hour");
     $email = $_POST['email'];
     $url = "<a href='adfranks.com/brickball/updatepwd.php?token=" . $token . "&email=" . $email . "'>Reset Password</a>";
-    $msg = "<html><head><title>Reset Password</title></head><body><p>If you requested to reset your password, please click on the link within the hour:  " . $url . "</p><p>Otherwise, ignore this message.<br />Brickball</p></body></html>"; 
+    $msg = "<html><head><title>Reset Password</title></head><body><p>If you requested to reset your password, please click on the link:  " . $url . "</p><p>Otherwise, ignore this message.<br />Brickball</p></body></html>"; 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= "From: info@adfranks.com" . "\r\n";
