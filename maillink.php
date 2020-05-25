@@ -14,7 +14,9 @@
 <body>
 
   <div id="container">
-    <header><h1>brick ball</h1></header>
+    <header>
+      <h1><a class="heading" href="brickball.php">brick ball</a></h1>
+    </header>
     <?php
     $servername = "localhost";
     $username = "adpfrank_7ba6_cg";
