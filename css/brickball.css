@@ -1,18 +1,50 @@
 /* Start with a clean slate. */
-html, body, div, span, h1, p, a, strong, form, label, table,
-caption, tr, th, td, canvas, footer, header, nav {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: bottom;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+} 
 
 /* Basic elements */
 body {
   background-color: black; 
-  font-family: Lucida Grande, Lucida Sans Unicode, Calibri, Arial, sans-serif;
+  font-family: Lucida Grande, Lucida Sans Unicode, Calibri, Arial, 
+  sans-serif;
   letter-spacing: 1px; 
 }
 header, footer, nav {display: block;}
@@ -40,9 +72,15 @@ h1 {
   background-color: black;
   color: lightgrey;
 }
+h2 {font-size: 2em; text-decoration: underline;}
 canvas {background-color: black;}
 table, #directions {border-radius: 7px;}
-main {margin: 0 auto 15px auto; width: 956px; background-color: lightgrey; padding: 20px;}
+main {
+  margin: 0 auto 15px auto; 
+  width: 956px; 
+  background-color: lightgrey; 
+  padding: 20px;
+}
 button {
   color: #f3f3f3;
   font-weight: bold;
@@ -54,6 +92,11 @@ button {
   cursor: pointer;
 }
 button:hover {background-color: blue;}
+legend {
+    margin-bottom: 1em; 
+    font-size: 1.25em;
+    text-decoration: underline;
+}
 fieldset {border-radius: 5px;}
 input[type=text], input[type=password], input[type=email] {
   width: 100%;
@@ -65,7 +108,7 @@ input[type=text], input[type=password], input[type=email] {
   box-sizing: border-box;
 }
 input[type=checkbox] {float: left;}
-p {font-size: 1.2em;}
+p {font-size: 1.2em; line-height: 1.2;}
 a {color: black;}
 a:hover {color: blue;}
 ul {
@@ -88,8 +131,13 @@ table {
   width: 96%;
   margin: auto;
 }
-th, td {text-align: center; padding: 5px;}
-th {font-variant: small-caps; font-weight: bold;}
+th, td {text-align: center; padding: 15px 5px;}
+th {
+  font-variant: small-caps; 
+  font-weight: bold; 
+  font-size: 1.2em; 
+  color: lightgrey;
+}
 tr:nth-child(even) {background-color: darkslategrey;}
 tr:nth-child(odd), th {background-color: lightslategrey;}
 
@@ -128,8 +176,8 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
   padding: 30px;
 }
 #directions button {padding: 10px;}
-#objective {padding: 30px 0px; font-size: 1em;}
-#game-end:hover {animation: none; background-color: blue;}
+#objective {padding: 20px 0px; font-size: 1em;}
+#game-end:hover {animation: none; color: blue;}
 #game-end {
   animation: attention 20s infinite;
 }
@@ -159,8 +207,11 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
 }
 .tryagain {
   min-width: 140px;
+  margin: 20px 16px;
   padding: 16px;
   width: 30%;
+  border: thin solid darkslategrey;
+  border-radius: 5px;
 }
 .close {
   position: absolute;
@@ -186,30 +237,33 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
   clear: both;
   display: table;
 }
+.heading {color:  white; text-decoration: none;}
+.heading:hover {text-decoration: none;}
 .form-response {padding: 20px; background-color: lightgrey;}
 .errormsg {color: red; padding-left: 16px;}
+.error-link {margin: 20px;}
 .wrap {padding-left: 16px;}
 
 /* keyframes for animations */
 @keyframes attention {
-  5% {background-color: lightslategrey;}
-  10% {background-color: darkslategrey;}
-  15% {background-color: lightslategrey;}
-  20% {background-color: darkslategrey;}
-  25% {background-color: lightslategrey;}
-  30% {background-color: darkslategrey;}
-  35% {background-color: lightslategrey;}
-  40% {background-color: darkslategrey;}
-  45% {background-color: lightslategrey;}
-  50% {background-color: darkslategrey;}
-  55% {background-color: lightslategrey;}
-  60% {background-color: darkslategrey;}
-  65% {background-color: lightslategrey;}
-  70% {background-color: darkslategrey;}
-  75% {background-color: lightslategrey;}
-  80% {background-color: darkslategrey;}
-  85% {background-color: lightslategrey;}
-  90% {background-color: darkslategrey;}
-  95% {background-color: lightslategrey;}
-  100% {background-color: darkslategrey;}
+  5% {color:red; text-decoration:none;}
+  10% {color:yellow; text-decoration:underline;}
+  15% {color:green; text-decoration:none;}
+  20% {color:orange;text-decoration:underline;}
+  25% {color:darkcyan; text-decoration:none;}
+  30% {color:yellow; text-decoration:underline;}
+  35% {color:forestgreen; text-decoration:none;}
+  40% {color:orange; text-decoration:underline;}
+  45% {color:red; text-decoration:none;}
+  50% {color:goldenrod; text-decoration:underline;}
+  55% {color:green; text-decoration:none;}
+  60% {color:gold; text-decoration:underline;}
+  65% {color:darkorchid; text-decoration:none;}
+  70% {color:palegreen; text-decoration:underline;}
+  75% {color:deeppink; text-decoration:none;}
+  80% {color:aqua; text-decoration:underline;}
+  85% {color:peru; text-decoration:none;}
+  90% {color:lawngreen; text-decoration:underline;}
+  95% {color:coral; text-decoration:none;}
+  100% {color:lightgrey; text-decoration:underline;}
 }
