@@ -13,7 +13,7 @@
 <body>
 
   <div id="container">
-    <header><h1>brick ball</h1></header>
+    <header><h1><a class="heading" href="brickball.php">brick ball</a></h1></header>
     <?php
     $servername = "localhost";
     $username = "adpfrank_7ba6_cg";
@@ -21,7 +21,6 @@
     $dbname = "adpfrank_db1";
 
     if ($_POST['newpsw'] == $_POST['newpsw-confirm']) {
-
       try {
           $conn = new PDO("mysql:host=$servername;dbname=adpfrank_db1", $username, $password);
 
@@ -33,15 +32,15 @@
                  '" . md5($_POST['newpsw']) . "' WHERE email='" . $_POST['email'] . "'");
           $sql->execute();
 
-          echo '<p class="form-response">Password successfully reset!<br /><br />
-                <button type="button" onclick="window.location.href=\'brickball.php\'">Log in & Play a Game</button>';
+          echo '<div class="form-response">Password successfully reset!<br /><br />
+                <button type="button" onclick="window.location.href=\'brickball.php\'">Log in & Play a Game</button></div>';
           } catch (PDOException $e) {
-              echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
-              '</span><br /><a href="brickball.php">Go back</a>.';
+              echo '<p class="form-response"><span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
+              '</span><br /><a class="error-link" href="brickball.php">Go back</a>.</p>';
       }
 
       $conn = null;
-    } else {echo 'Passwords do not match.  Please, try again.';}
+    } else {echo '<p class="form-response">Passwords do not match.  Please, try again.</p>';}
     ?>
   </div>
 

@@ -15,7 +15,7 @@
 <body>
 
   <div id="container">
-    <header><h1>brick ball</h1></header>
+    <header><h1><a class="heading" href="brickball.php">brick ball</a></h1></header>
     <?php
     $servername = "localhost";
     $username = "adpfrank_7ba6_cg";
@@ -44,15 +44,15 @@
             }
 
             echo '<p class="form-response">Email successfully updated!<br /><br />
-            <button type="button" onclick="window.location.href=\'brickball.php\'">Play a Game</button>';
+            <button type="button" onclick="window.location.href=\'brickball.php\'">Play a Game</button></p>';
         } catch (PDOException $e) {
-            echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
-            '</span><br /><a href="brickball.php">Go back to the game</a>.';
+            echo '<p class="form-response"><span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
+            '</span><br /><br /><a class="error-link" href="brickball.php">Go back to the game.</a></p>';
         }
 
         $conn = null;
     } else {
-        echo '<span class="errormsg">The password entered was incorrect.  Please, try again.</span>
+        echo '<div class="form-response"><span class="errormsg">The password entered was incorrect.  Please, try again.</span>
         <form class="tryagain" action="changeemail.php" method="post" autocomplete="on">
         <fieldset>
         <legend>Change Email</legend>
@@ -66,7 +66,7 @@
         <button type="submit">Submit</button>
         </div>
         </fieldset>
-        </form>';
+        </form></div>';
     }
 
     ?>

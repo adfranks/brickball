@@ -15,7 +15,7 @@
 <body>
 
   <div id="container">
-    <header><h1>brick ball</h1></header>
+    <header><h1><a class="heading" href="brickball.php">brick ball</a></h1></header>
     <?php
     $_SESSION['uname'] = $_POST['user']; 
     $_SESSION['pword'] = md5($_POST['psw']); 
@@ -27,7 +27,6 @@
     $dbname = "adpfrank_db1";
 
     if ($_POST['psw'] === $_POST['psw-confirm']) {
-
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
@@ -51,7 +50,7 @@
 
             switch($e->getCode()) {
                 case 23000:
-                    echo '<span class="errormsg">Sorry, that username or email already exists.  Please choose another one and try again.</span>
+                    echo '<div class="form-response"><span class="errormsg">Sorry, that username or email already exists.  Please choose another one and try again.</span>
                     <form class="tryagain" action="member.php" method="post" autocomplete="on">
                     <fieldset>
                     <legend>Sign Up</legend>
@@ -65,11 +64,11 @@
                     <input type="password" placeholder="Confirm Password" name="psw-confirm" maxlength="20" required>
                     <button class="cancelbtn" type="button" onclick="window.location.href=\'brickball.php\'">Cancel</button>
                     <button type="submit">Submit</button>
-                    </fieldset></form>';
+                    </fieldset></form></div>';
                     break;
                 default:
-                    echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
-                    '</span><br /><a href="brickball.php">Go back and play the game</a>.';
+                    echo '<p class="form-response"><span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
+                    '</span><br /><a class="error-link" href="brickball.php">Go back and play the game</a>.</p>';
             }
         }
 
@@ -77,7 +76,7 @@
     } else {
         session_unset();
         session_destroy();
-        echo '<span class="errormsg">Passwords do not match.  Please try again.</span>
+        echo '<div class="form-response"><span class="errormsg">Passwords do not match.  Please try again.</span>
         <form class="tryagain" action="member.php" method="post" autocomplete="on">
         <fieldset>
         <legend>Sign Up</legend>
@@ -91,7 +90,7 @@
         <input type="password" placeholder="Confirm Password" name="psw-confirm" maxlength="20" required>
         <button class="cancelbtn" type="button" onclick="window.location.href=\'brickball.php\'">Cancel</button>
         <button type="submit">Submit</button>
-        </fieldset></form>';
+        </fieldset></form></div>';
     }
     ?>
   </div>

@@ -13,7 +13,7 @@
 <body>
 
   <div id="container">
-    <header><h1>brick ball</h1></header>
+    <header><h1><a class="heading" href="brickball.php">brick ball</a></h1></header>
     <?php
     $servername = "localhost";
     $username = "adpfrank_7ba6_cg";
@@ -36,9 +36,8 @@
 
         // check to see if token expired, if not show the form 
         if (time() < $column['expiration']) { 
-        echo '<form action="resetpwd.php" method="post">
+        echo '<div class="form-response"><h2>Reset Password</h2><form class="tryagain" action="resetpwd.php" method="post">
                 <fieldset>
-                  <legend>Reset Password</legend>
                     <input type="hidden" name="email" value="' . $email . '" required>
                     <label><b>New Password:</b></label>
                     <input type="password" placeholder="Enter New Password" name="newpsw" maxlength="20" required>
@@ -48,12 +47,12 @@
                       <button type="submit">Submit</button>
                     </div>
                 </fieldset>
-              </form>';
-        } else {echo 'The time alloted to reset your password has passed.
-                <a href="brickball.php">Please, try again</a>.';}
+              </form></div>';
+        } else {echo '<p class="form-response">The time alloted to reset your password has passed.
+                <a href="brickball.php">Please, try again</a>.</p>';}
     } catch (PDOException $e) {
-        echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
-        '</span><br /><a href="brickball.php">Please, try again</a>.';
+        echo '<p class="form-response"><span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
+        '</span><br /><a class="error-link" href="brickball.php">Please, try again</a>.</p>';
     }
 
     $conn = null;

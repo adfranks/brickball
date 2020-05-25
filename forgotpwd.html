@@ -5,26 +5,30 @@
   <meta charset="UTF-8" />
   <title>Brick ball</title>
   <meta name="keywords" content="brick ball forgot password page" />
-  <meta name="description" content="breakout game for web browser forgot password page" />
+  <meta name="description" 
+  content="breakout game for web browser forgot password page" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
 </head>
 
 <body>
 
-  <div id="container">
-    <header><h1>brick ball</h1></header>
-    <form action="maillink.php" method="post" autocomplete="on">
+<div id="container">
+  <header><h1><a class="heading" href="brickball.php">brick ball</a></h1></header>
+  <div class="form-response">
+    <h2>Forgot Password</h2>
+    <form class="tryagain" action="maillink.php" method="post" autocomplete="on">
       <fieldset>
-        <legend>Forgot Password</legend>
         <label><b>Email:</b></label>
-        <input type="email" placeholder="Enter Email Address" name="email" maxlength="255" required>
+        <input type="email" placeholder="Enter Email Address" name="email" 
+        maxlength="255" required>
         <div class="clearfix">
           <button type="submit">Next</button>
         </div>
       </fieldset>
     </form>
   </div>
+</div>
 
 </body>
 

@@ -15,7 +15,7 @@
 <body>
 
   <div id="container">
-    <header><h1>brick ball</h1></header>
+    <header><h1><a class="heading" href="brickball.php">brick ball</a></h1></header>
     <?php
     $servername = "localhost";
     $username = "adpfrank_7ba6_cg";
@@ -42,15 +42,15 @@
 
         // sql to get user from db 
         $sql = $conn->prepare("SELECT username, highscore, championships FROM
-               members WHERE (username='" . $_POST['user'] . "' OR email='" . $_POST['user'] . "') AND password=
-               '" . $_SESSION['pword'] . "'");
+        members WHERE (username='" . $_POST['user'] . "' OR email='" . $_POST['user'] . "') AND password=
+        '" . $_SESSION['pword'] . "'");
         $sql->setFetchMode(PDO::FETCH_OBJ);
         $sql->execute();
         $row = $sql->fetch();
 
         // check if anything was found in db
         if ($row == null) {
-            echo '<span class="errormsg">Invalid username or password.  Please try again.</span>
+            echo '<div class="form-response"><span class="errormsg">Invalid username or password.  Please try again.</span>
             <form class="tryagain" action="login.php" method="post" autocomplete="on">
             <fieldset>
             <legend>Log In</legend>
@@ -60,7 +60,7 @@
             <input type="password" placeholder="Enter Password" name="psw" maxlength="30" required>
             <button class="cancelbtn" type="button" onclick="window.location.href=\'brickball.php\'">Cancel</button>
             <button type="submit">Submit</button>
-            <span class="forgot"><a href="#">Forgot password?</a></span></fieldset></form>';
+            <span class="forgot"><a href="#">Forgot password?</a></span></fieldset></form></div>';
         } else {
             $_SESSION['uname'] = $row->username;
             
@@ -78,8 +78,8 @@
     catch (PDOException $e) {
         session_unset();
         session_destroy();
-        echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
-        '</span><a href="brickball.php">Go back</a>.';
+        echo '<p class="form-response"><span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
+        '</span><a class="error-link" href="brickball.php">Go back</a>.</p>';
     }
 
     $conn = null;

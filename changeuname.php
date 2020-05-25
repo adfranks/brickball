@@ -15,7 +15,7 @@
 <body>
 
   <div id="container">
-    <header><h1>brick ball</h1></header>
+    <header><h1><a class="heading" href="brickball.php">brick ball</a></h1></header>
     <?php
     $servername = "localhost";
     $username = "adpfrank_7ba6_cg";
@@ -51,7 +51,7 @@
         } catch (PDOException $e) {
             switch($e->getCode()) {
                 case 23000:
-                    echo '<span class="errormsg">Sorry, that username already exists.  Please, choose another one and try again.</span>
+                    echo '<div class="form-response"><span class="errormsg">Sorry, that username already exists.  Please, choose another one and try again.</span>
                     <form class="tryagain" action="changeuname.php" method="post" autocomplete="on">
                     <fieldset>
                     <legend>Change Username</legend>
@@ -65,17 +65,17 @@
                     <button type="submit">Submit</button>
                     </div>
                     </fieldset>
-                    </form>';
+                    </form></div>';
                     break;
                 default:
-                    echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
-                    '</span><br /><a href="brickball.php">Go back</a>.';
+                    echo '<p class="form-response"><span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . 
+                    '</span><br /><a class="error-link" href="brickball.php">Go back</a>.</p>';
             }
         }
 
         $conn = null;
     } else {
-        echo '<span class="errormsg">The current username entered is incorrect.  Please, try again.</span>
+        echo '<div class="form-response"><span class="errormsg">The current username entered is incorrect.  Please, try again.</span>
         <form class="tryagain" action="changeuname.php" method="post" autocomplete="on">
         <fieldset>
         <legend>Change Username</legend>
@@ -89,7 +89,7 @@
         <button type="submit">Submit</button>
         </div>
         </fieldset>
-        </form>';
+        </form></div>';
     }
 
     ?>
