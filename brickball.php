@@ -26,8 +26,7 @@ if (!isset($_SESSION['uname'])) {
   <meta http-equiv="pragma" content="no-cache">
   <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
-  <link rel="stylesheet" 
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body onload="brickBall.init(); mobile();">
@@ -61,14 +60,17 @@ if (!isset($_SESSION['uname'])) {
       <p id="greet">
         <?php 
         if (!isset($_SESSION['uname'])) {
-            echo 'Hello, creature! <button onclick='
-              . '"document.getElementById(\'sign\').style.display='
-              . '\'block\'">Sign up</button> or <button onclick='
-              . '"document.getElementById(\'login\').style.display='
-              . '\'block\'">log in</button> to keep track of your best ' 
-              . 'games.  See if you have what it takes to join the top ten'
-              . ' list.  Good luck! <span id="new-game">Press <button id="new-button" 
-        onclick="brickBall.restart()">start</button> for a new game.</span>';
+            echo 'Hello, creature! Brick Ball is a version of the classic'
+            . ' Breakout game. <button onclick='
+            . '"document.getElementById(\'sign\').style.display='
+            . '\'block\'">Sign up</button> or <button onclick='
+            . '"document.getElementById(\'login\').style.display='
+            . '\'block\'">log in</button> to keep track of your best ' 
+            . 'games.  See if you have what it takes to join the top ten'
+            . ' list.  Good luck! <span id="new-game">Press <button id='
+            . '"new-button" onclick="brickBall.restart()">start</button>'
+            . ' for a new game.</span>';
+        
         } else {
             echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
 
@@ -107,9 +109,12 @@ if (!isset($_SESSION['uname'])) {
     </div>
 
     <div id="col-2"> 
-      <p id="top">
-        <?php include 'topten.php'; ?>
-      </p>
+      <div id="topten">
+        <h2>The Top Ten</h2>
+        <p id="top">
+          <?php include 'topten.php'; ?>
+        </p>
+      </div>
     </div>
 
     <div class="clearfix"></div>
