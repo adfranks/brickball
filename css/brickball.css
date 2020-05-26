@@ -74,7 +74,7 @@ h1 {
 }
 h2 {font-size: 2em; text-decoration: underline;}
 canvas {background-color: black;}
-table, #directions {border-radius: 7px;}
+table, #directions, #topten {border-radius: 7px;}
 main {
   margin: 0 auto 15px auto; 
   width: 956px; 
@@ -128,8 +128,6 @@ table {
   background-color: #132020; 
   color: white;
   border-spacing: 10px; 
-  width: 96%;
-  margin: auto;
 }
 th, td {text-align: center; padding: 15px 5px;}
 th {
@@ -150,9 +148,8 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
   color: white;
 }
 #greet {
-  padding: 30px; 
-  text-align: justify; 
-  font-size: 1.2em; 
+  padding: 40px; 
+  font-size: 1.4em; 
 }
 #greet button {
   background-color: black;
@@ -169,12 +166,14 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
 #col-1 {float: left; width: 50%;}
 #col-1 b {font-size: 1.5em;}
 #col-2 {float: left; width: 50%;}
-#directions {
-  background-color: #669999; 
+#directions, #topten {
   width: 96%; 
   margin: auto;
-  padding: 30px;
+  padding: 30px; 
 }
+#topten {background-color: #AAC0AA;} 
+#topten h2 {margin-bottom: 20px;}
+#directions {background-color: #669999;} 
 #directions button {padding: 10px;}
 #objective {padding: 20px 0px; font-size: 1em;}
 #game-end:hover {animation: none; color: blue;}
