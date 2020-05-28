@@ -16,12 +16,12 @@ if (!isset($_SESSION['uname'])) {
 <html lang="en-US">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Brick Ball</title>
   <meta name="keywords" 
-  content="breakout, vintage, retro, online video game, web application" />
+  content="breakout, vintage, retro, online video game, web application">
   <meta name="description" 
-  content="A fun version of the vintage Breakout video game. />
+  content="A fun version of the vintage Breakout video game.>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="pragma" content="no-cache">
   <link rel="icon" href="images/brickball-icon.png">
@@ -36,15 +36,14 @@ if (!isset($_SESSION['uname'])) {
     <h1>brick ball</h1> 
     <?php 
     if (!isset($_SESSION['uname'])) {
-        echo '<button onclick='
-          . '"document.getElementById(\'sign\').style.display=\'block\'">'
-          . 'Sign Up</button>
-          <button onclick='
-          . '"document.getElementById(\'login\').style.display=\'block\'">'
-          . 'Log In</button>';
+        echo '<button onclick=' .
+        '"document.getElementById(\'sign\').style.display=\'block\'">' .
+        'Sign Up</button><button onclick=' .
+        '"document.getElementById(\'login\').style.display=\'block\'">' .
+        'Log In</button>';
     } else {
-        echo '<button onclick="location.href=\'logout.php\'">'
-          . 'Log Out</button>';
+        echo '<button onclick="location.href=\'logout.php\'">' .
+        'Log Out</button>';
     }
     ?>
   </header>
@@ -60,28 +59,34 @@ if (!isset($_SESSION['uname'])) {
       <p id="greet">
         <?php 
         if (!isset($_SESSION['uname'])) {
-            echo 'Hello, creature! Brick Ball is a version of the classic'
-            . ' Breakout game. <button onclick='
-            . '"document.getElementById(\'sign\').style.display='
-            . '\'block\'">Sign up</button> or <button onclick='
-            . '"document.getElementById(\'login\').style.display='
-            . '\'block\'">log in</button> to keep track of your best ' 
-            . 'games.  See if you have what it takes to join the top ten'
-            . ' list.  Good luck! <span id="new-game">Press <button id='
-            . '"new-button" onclick="brickBall.restart()">start</button>'
-            . ' for a new game.</span>';
+            echo 'Hello, creature! Brick Ball is a version of the' .
+            ' classic Breakout game. <button onclick=' .
+            '"document.getElementById(\'sign\').style.display=' .
+            '\'block\'">Sign up</button> or <button onclick=' .
+            '"document.getElementById(\'login\').style.display=' .
+            '\'block\'">log in</button> to keep track of your best ' .
+            'games.  See if you have what it takes to join the top ten' .
+            ' list.  Good luck! <span id="new-game">Press <button id=' .
+            '"new-button" onclick="brickBall.restart()">start</button>' .
+            ' for a new game.</span>';
         
         } else {
             echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
 
             if (isset($_SESSION['champs'])) {
-                echo 'Championships: ' . $_SESSION["champs"] . '!!! | <span id="new-game"> Press <button id="new-button" 
-        onclick="brickBall.restart()">start</button> for a new game.</span>';
+                echo 'Championships: ' . $_SESSION["champs"] . 
+                '!!! | <span id="new-game"> Press <button id=' .
+                '"new-button" onclick="brickBall.restart()">' .
+                'start</button> for a new game.</span>';
+        
             } else if (isset($_SESSION['hscore'])) {
-                echo '<span id="high-score">High Score: ' . $_SESSION["hscore"] . '</span> | <span id="new-game"> Press <button id="new-button" 
-        onclick="brickBall.restart()">start</button> for a new game.</span>';
+                echo '<span id="high-score">High Score: ' . 
+                $_SESSION["hscore"] . '</span> | <span id="new-game">' .
+                ' Press <button id="new-button" onclick=' .
+                '"brickBall.restart()">start</button> for a new game.' .
+                '</span>';
+        
             }
-
         }
         ?>
       </p>
@@ -91,7 +96,8 @@ if (!isset($_SESSION['uname'])) {
       <div id="directions">
         <h2>How to Play</h2>
         <p id="objective">
-        <span>Clear all the bricks by bouncing the ball into them.</span></p>
+          <span>Clear all the bricks by bouncing the ball into them.</span>
+        </p>
         <ul>
           <li>Press the "s" key to serve the ball.</li>
           <li>Left and right arrows move the paddle.</li>  
@@ -202,7 +208,8 @@ if (!isset($_SESSION['uname'])) {
 
   <!-- Change Password Modal -->
   <div id="newpword" class="modal">
-    <span onclick="document.getElementById('newpword').style.display='none'"    class="close" title="Close Modal">&times;</span>
+    <span onclick="document.getElementById('newpword').style.display='none'"
+    class="close" title="Close Modal">&times;</span>
     <form class="modal-content" action="changepword.php" method="post" 
     autocomplete="on">
       <fieldset>
@@ -225,7 +232,8 @@ if (!isset($_SESSION['uname'])) {
 
   <!-- Update Email Modal -->
   <div id="newemail" class="modal">
-    <span onclick="document.getElementById('newemail').style.display='none'"    class="close" title="Close Modal">&times;</span>
+    <span onclick="document.getElementById('newemail').style.display='none'"
+    class="close" title="Close Modal">&times;</span>
     <form class="modal-content" action="changeemail.php" method="post" 
     autocomplete="on">
       <fieldset>
@@ -272,25 +280,21 @@ if (!isset($_SESSION['uname'])) {
     <h1>brick ball</h1>
     <?php 
     if (isset($_SESSION['uname'])) {
-        echo '<button onclick='
-          . '"document.getElementById(\'usname\').style.display='
-          . '\'block\'">Change Username</button>
-          <button onclick='
-          . '"document.getElementById(\'newpword\').style.display='
-          . '\'block\'">Change Password</button> 
-          <button onclick='
-          . '"document.getElementById(\'newemail\').style.display='
-          . '\'block\'">Update Email</button> 
-          <button onclick='
-          . '"document.getElementById(\'delmember\').style.display='
-          . '\'block\'">Delete Membership</button>'; 
+        echo '<button onclick=' .
+        '"document.getElementById(\'usname\').style.display=' .
+        '\'block\'">Change Username</button><button onclick=' .
+        '"document.getElementById(\'newpword\').style.display=' .
+        '\'block\'">Change Password</button><button onclick=' . 
+        '"document.getElementById(\'newemail\').style.display=' .
+        '\'block\'">Update Email</button><button onclick=' . 
+        '"document.getElementById(\'delmember\').style.display=' .
+        '\'block\'">Delete Membership</button>'; 
     } else {
-        echo '<button onclick='
-          . '"document.getElementById(\'sign\').style.display='
-          . '\'block\'">Sign Up</button> 
-          <button onclick='
-          . '"document.getElementById(\'login\').style.display='
-          . '\'block\'">Log In</button>';
+        echo '<button onclick=' .
+        '"document.getElementById(\'sign\').style.display=' .
+        '\'block\'">Sign Up</button><button onclick=' .
+        '"document.getElementById(\'login\').style.display=' .
+        '\'block\'">Log In</button>';
     }
     ?>
   </footer>

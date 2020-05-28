@@ -11,22 +11,19 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // sql to order top ten highscorers 
-    $sql = $conn->prepare("SELECT username, championships, highscore FROM members ORDER BY championships DESC, highscore DESC LIMIT 10");
+    $sql = $conn->prepare("SELECT username, championships, highscore" .
+    " FROM members ORDER BY championships DESC, highscore DESC LIMIT 10");
+
     $sql->setFetchMode(PDO::FETCH_OBJ);
     $sql->execute();
     $row = $sql->fetchAll();
     
-    echo "<table>
-            <tr>
-              <th>Rank</th>
-              <th>Top Ten</th>
-              <th>High Score</th>
-            </tr>";
+    echo "<table><tr><th>Rank</th><th>Username</th><th>High Score</th>" .
+    "</tr>";
 
     for ($x = 0; $x < 10; $x++) {
-        echo "<tr><td>" . ($x + 1) . "</td>
-              <td>" . $row[$x]->username . "</td>
-              <td>"; 
+        echo "<tr><td>" . ($x + 1) . "</td><td>" . $row[$x]->username . 
+        "</td><td>"; 
 
         if ($row[$x]->championships == 0) {
             echo $row[$x]->highscore;

@@ -20,9 +20,13 @@ if (isset($_SESSION['uname'])) {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // sql to select user's highscore from db 
-        $sql = $conn->prepare("UPDATE members SET championships=championships + 1, highscore=224 WHERE username='" . $_SESSION['uname'] . "'");
+        $sql = $conn->prepare("UPDATE members SET championships=" .
+        "championships + 1, highscore=224 WHERE username='" . 
+        $_SESSION['uname'] . "'");
+
         $sql->execute();
-        echo " <b>Victory!!! Championships: " . $_SESSION['champs'] . "</b>"; 
+        echo " <b>Victory!!! Championships: " . 
+        $_SESSION['champs'] . "</b>"; 
     }
     catch(PDOException $e) {
         echo "Error: " . $e->getMessage();

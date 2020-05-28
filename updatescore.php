@@ -20,9 +20,12 @@ if (isset($_SESSION['uname'])) {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // sql to select user's highscore from db 
-            $sql = $conn->prepare("UPDATE members SET highscore='" . $q . "' WHERE username='" . $_SESSION['uname'] . "'");
+            $sql = $conn->prepare("UPDATE members SET highscore='" . 
+            $q . "' WHERE username='" . $_SESSION['uname'] . "'");
+
             $sql->execute();
-            echo "<b>Congratulations!!!  New High Score: " . $_SESSION['hscore'] . "</b>"; 
+            echo "<b>Congratulations!!!  New High Score: " . 
+            $_SESSION['hscore'] . "</b>"; 
         }
         catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -32,7 +35,7 @@ if (isset($_SESSION['uname'])) {
     } else if (!isset($_SESSION['champs'])) {
         echo "High Score: " . $_SESSION['hscore'];
     } else {
-        echo "Well, spank my arse and call me Barney Sprinkles!!!  Are you kidding???  Hooray!  Great job, Champ!!!";
+        echo "Yeeeaaaaahhhhh!!!  Hooray!  Great job, Champ!!!";
     }
 
 }
