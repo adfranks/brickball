@@ -55,6 +55,7 @@ header, footer {
   background-color: darkslategrey;
   padding: 3em;
 }
+footer {padding-right: 2em;}
 header button, footer button {
   vertical-align: super;
   border: thin solid black;
