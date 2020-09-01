@@ -10,6 +10,7 @@
   <meta name="description" 
   content="breakout game for web browser log in page">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
 </head>
 
@@ -46,12 +47,12 @@ try {
         echo '<div class="form-response"><span class="errormsg">' .
         'Invalid password.  Please try again.</span>' .
         '<form class="tryagain" action="deletemember.php" method=' .
-        '"post" autocomplete="on"><fieldset><legend>Delete ' .
+        '"post" autocomplete="on"><fieldset><legend>Cancel ' .
         'Membership</legend><label><b>Password:</b></label>' .
         '<input type="password" placeholder="Enter Password" name=' .
         '"psw" maxlength="30" required><div class="clearfix">' .
         '<button type="button" onclick="window.location.href=' .
-        '\'brickball.php\'" class="cancelbtn">Cancel</button>' .
+        '\'brickball.php\'" class="cancelbtn">Back</button>' .
         '<button type="submit">Submit</button><span class="forgot">' .
         '<a href="#">Forgot username or password?</a></span>' .
         '</div></fieldset></form></div>';

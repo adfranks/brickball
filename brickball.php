@@ -254,7 +254,7 @@ if (!isset($_SESSION['uname'])) {
     </form>
   </div>
 
-  <!-- Delete Membership Modal -->
+  <!-- Cancel Membership Modal -->
   <div id="delmember" class="modal">
     <span onclick=
     "document.getElementById('delmember').style.display='none'" 
@@ -262,14 +262,14 @@ if (!isset($_SESSION['uname'])) {
     <form class="modal-content" action="deletemember.php" method="post" 
     autocomplete="on">
       <fieldset>
-        <legend>Delete Membership</legend>
+        <legend>Cancel Membership</legend>
         <label><b>Password:</b></label>
         <input type="password" placeholder="Enter Password" name="psw" 
         maxlength="30" required>
         <div class="clearfix">
           <button type="button" onclick=
           "document.getElementById('delmember').style.display='none'"
-          class="cancelbtn">Cancel</button>
+          class="cancelbtn">Back</button>
           <button type="submit">Submit</button>
         </div>
       </fieldset>
@@ -288,7 +288,7 @@ if (!isset($_SESSION['uname'])) {
         '"document.getElementById(\'newemail\').style.display=' .
         '\'block\'">Update Email</button><button onclick=' . 
         '"document.getElementById(\'delmember\').style.display=' .
-        '\'block\'">Delete Membership</button>'; 
+        '\'block\'">Cancel Membership</button>'; 
     } else {
         echo '<button onclick=' .
         '"document.getElementById(\'sign\').style.display=' .
