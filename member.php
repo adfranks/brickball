@@ -10,6 +10,7 @@
   <meta name="description" 
   content="breakout game for web browser sign up page">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
 </head>
 
@@ -194,7 +195,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                     <tr>
                       <td class='button' bgcolor='#0066ff' style='border-collapse:collapse;text-align:center;' >
                         <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
-                          Log In
+                          Check It Out
                         </a>
                       </td>
                     </tr>
@@ -298,10 +299,10 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                          </b>                        
                         </p>
                         <p class='body-c' style='line-height:22px;'>Play
-                        for as long as you like.  You don't have to 
+                        for as long as you like.  You don't have to
                         worry about the clock and how much time you have.
-                        This is about your skill and how long you can
-                        keep that ball bouncing.
+                        It's free!  This is about your skill and how long
+                        you can keep that ball bouncing.
                         </p>
                       </td>
                     </tr>
@@ -346,13 +347,13 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                       <td class='text' style='border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
                         <p style='padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;Margin:0;font-size:20px;' >
                          <b style='font-size:20px'>
-                          Easily end your membership at any time.
+                          Easily cancel your membership at any time.
                          </b>                        
                         </p>
                         <p class='body-c' style='line-height:22px;' >
                         At any time you wish, you may quickly and easily
-                        delete your membership.  Simply log in and select
-                        the delete membership option.  Your record will
+                        end your membership.  Simply log in and select
+                        the cancel membership option.  Your record will
                         be purged from our system.  You can sign up
                         again whenever you wish.
                         </p>
@@ -364,7 +365,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                     <tr>
                       <td class='button' bgcolor='#0066ff' style='border-collapse:collapse;text-align:center;' >
                         <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
-                          Check It Out
+                          Log In
                         </a>
                       </td>
                     </tr>
