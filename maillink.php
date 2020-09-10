@@ -49,7 +49,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
 <body bgcolor='#1c1c1c' style='margin-top:0!important;margin-bottom:0!important;margin-right:0!important;margin-left:0!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;' >
 
-<center class='wrapper' style='width:100%!important;height:100%!important;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;' >
+<center class='wrapper' style='color:#000000;width:100%!important;height:100%!important;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;' >
   <div class='webkit' style='max-width:600px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;' >
 
     <!--[if (gte mso 9)|(IE)]>
