@@ -145,7 +145,8 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
           style='border-collapse:collapse;border-spacing:0;font-family:Calibri,Helvetica,Verdana,sans-serif;' >
             <tr>
               <td align='center' class='footercopy' style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-family:Calibri,Helvetica,Verdana,sans-serif;font-size:24px;line-height:34px;color:#ffffff;' >
-                <a href='https://adfranks.com/brickball/brickball.php' style='color:#ffffff;text-decoration:underline;' ><font color='#ffffff'>Go Back to the Game</font></a>
+                <a href='https://adfranks.com/brickball/brickball.php' style='color:#ffffff;text-decoration:underline;' ><font color='#ffffff'>Brick Ball</font></a>
+                <p style='color:#ffffff'>Brickball, Baltimore, MD</p>
               </td>
             </tr>
             <tr>
