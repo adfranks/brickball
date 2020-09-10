@@ -199,9 +199,10 @@ try {
     /* mail a link to user with token attached to url, then give a 
     success response with further instructions */
     mail($email,"Reset Password",$msg,$headers);
-    echo '<p class="form-response">A message was just sent to your email address.  Within 24 hours, open the message and click on the provided link to reset your password.</p>';
+    echo '<div class="form-response" style="line-height:1.5em;">A message was just sent to your email address.  Within 24 hours, open the message and click on the provided link to reset your password.<br /><br /><button type="button" onclick="window.location.href=\'brickball.php\'">Back</button></div>';
+
 } catch (PDOException $e) {
-    echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . '</span><br /><br /><a href="brickball.php">Go back to the game</a>.';
+    echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . '</span><br /><br /><button type="button" onclick="window.location.href=\'brickball.php\'">Back</button>';
 }
 
 $conn = null;

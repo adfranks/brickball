@@ -8,6 +8,7 @@
   <meta name="description" 
   content="breakout game for web browser update password page">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
 </head>
 
@@ -50,9 +51,9 @@ try {
     '"password" placeholder="Enter New Password" name=' .
     '"newpsw-confirm" maxlength="20" required><div class="clearfix">' .
     '<button type="submit">Submit</button></div></fieldset></form></div>';
-    } else {echo '<p class="form-response">The time alloted to reset' .
-    ' your password has passed. <a href=' .
-    '"brickball.php">Please, try again</a>.</p>';}
+    } else {echo '<div class="form-response">The time alloted to reset' .
+    ' your password has passed.' .
+    ' Please, try again.<br /><br /><h2>Forgot Password</h2><form class="tryagain" action="maillink.php" method="post" autocomplete="on"><fieldset><label><b>Email:</b></label><input type="email" placeholder="Enter Email Address" name="email" maxlength="255" required><div class="clearfix"><button type="submit">Next</button></div></fieldset></form></div>';}
 } catch (PDOException $e) {
     echo '<p class="form-response"><span class="errormsg">' .
     'Oopsy Daisy!  Error: ' . $e->getMessage() . 
