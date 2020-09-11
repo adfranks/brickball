@@ -74,7 +74,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
           <!-- Presentational attributes are overriden by style
           attributes.  Give the image a pixel width for Outlook, 
           but style to adjust size on others. -->
-          <img src='https://adfranks.com/portfolio/images/pink-brick5g.jpg' width='600' alt='Brick Ball' 
+          <img src='https://adfranks.com/brickball/images/pink-brick5g.jpg' width='600' alt='Brick Ball' 
           style='border-width:0;width:100%;max-width:600px;height:auto;' />
         </td>
       </tr>
