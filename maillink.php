@@ -18,13 +18,14 @@
 <header>
   <h1><a class="heading" href="brickball.php">brick ball</a></h1>
 </header>
+
 <?php
 $servername = "localhost";
 $username = "adpfrank_7ba6_cg";
 $password = "gosun";
 $dbname = "adpfrank_db1";
 $token = bin2hex(openssl_random_pseudo_bytes(16));
-$expiry = strtotime("+24 hour");
+$expiry = strtotime("+24 hours");
 $email = $_POST['email'];
 $url = "<a href='adfranks.com/brickball/updatepwd.php?token=" . $token . "&email=" . $email . "'>Reset Password</a>";
 $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 
@@ -146,7 +147,6 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
             <tr>
               <td align='center' class='footercopy' style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-family:Calibri,Helvetica,Verdana,sans-serif;font-size:24px;line-height:34px;color:#ffffff;' >
                 <a href='https://adfranks.com/brickball/brickball.php' style='color:#ffffff;text-decoration:underline;' ><font color='#ffffff'>Brick Ball</font></a>
-                <p style='color:#ffffff'>Brickball, Baltimore, MD</p>
               </td>
             </tr>
             <tr>
@@ -200,7 +200,7 @@ try {
     /* mail a link to user with token attached to url, then give a 
     success response with further instructions */
     mail($email,"Reset Password",$msg,$headers);
-    echo '<div class="form-response" style="line-height:1.5em;">A message was just sent to your email address.  Within 24 hours, open the message and click on the provided link to reset your password.<br /><br /><button type="button" onclick="window.location.href=\'brickball.php\'">Back</button></div>';
+    echo '<div class="form-response" style="line-height:1.5em;">A message will be sent to your email address.  Within 24 hours, open the message and click on the provided link to reset your password.<br /><br /><button type="button" onclick="window.location.href=\'brickball.php\'">Back</button></div>';
 
 } catch (PDOException $e) {
     echo '<span class="errormsg">Oopsy Daisy!  Error: ' . $e->getMessage() . '</span><br /><br /><button type="button" onclick="window.location.href=\'brickball.php\'">Back</button>';

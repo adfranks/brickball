@@ -69,7 +69,6 @@ if (!isset($_SESSION['uname'])) {
             ' list.  Good luck! <span id="new-game">Press <button id=' .
             '"new-button" onclick="brickBall.restart()">start</button>' .
             ' for a new game.</span>';
-        
         } else {
             echo '<em>Welcome, ' . $_SESSION["uname"] . '!</em> | '; 
 
@@ -78,14 +77,12 @@ if (!isset($_SESSION['uname'])) {
                 '!!! | <span id="new-game"> Press <button id=' .
                 '"new-button" onclick="brickBall.restart()">' .
                 'start</button> for a new game.</span>';
-        
             } else if (isset($_SESSION['hscore'])) {
                 echo '<span id="high-score">High Score: ' . 
                 $_SESSION["hscore"] . '</span> | <span id="new-game">' .
                 ' Press <button id="new-button" onclick=' .
                 '"brickBall.restart()">start</button> for a new game.' .
                 '</span>';
-        
             }
         }
         ?>

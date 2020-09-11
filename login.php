@@ -10,6 +10,7 @@
   <meta name="description" 
   content="breakout game for web browser log in page">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
 </head>
 
@@ -31,7 +32,7 @@ if (!isset($_SESSION['uname']) && !isset($_COOKIE[$cookiepass])) {
     $_SESSION['pword'] = md5($_POST['psw']);
 }
 
-// see if they want to automatically stay logged in via cookies
+// See if they want to automatically stay logged in via cookies.
 if (isset($_COOKIE[$cookiename]) && isset($_COOKIE[$cookiepass])) {
     $_POST['user'] = $_COOKIE[$cookiename];
     $_SESSION['pword'] = $_COOKIE[$cookiepass];
@@ -40,10 +41,10 @@ if (isset($_COOKIE[$cookiename]) && isset($_COOKIE[$cookiepass])) {
 try {
     $conn = new PDO("mysql:host=$servername;dbname=adpfrank_db1", $username, $password);
 
-    // set the PDO error mode to exception
+    // Set the PDO error mode to exception.
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // sql to get user from db 
+    // SQL to get user from db.
     $sql = $conn->prepare("SELECT username, highscore, championships" .
     " FROM members WHERE (username='" . $_POST['user'] . "' OR email='" . 
     $_POST['user'] . "') AND password='" . 
@@ -53,7 +54,7 @@ try {
     $sql->execute();
     $row = $sql->fetch();
 
-    // check if anything was found in db
+    // Check if anything was found in db.
     if ($row == null) {
         echo '<div class="form-response"><span class="errormsg">' .
         'Invalid username or password.  Please try again.</span>' .
@@ -66,7 +67,7 @@ try {
         '"psw" maxlength="30" required><button class="cancelbtn" type=' .
         '"button" onclick="window.location.href=\'brickball.php\'">' .
         'Cancel</button><button type="submit">Submit</button>' .
-        '<span class="forgot"><a href="#">Forgot password?</a></span>' .
+        '<span class="forgot"><a href="forgotpwd.html">Forgot password?</a></span>' .
         '</fieldset></form></div>';
     } else {
         $_SESSION['uname'] = $row->username;
@@ -88,7 +89,7 @@ catch (PDOException $e) {
     session_destroy();
     echo '<p class="form-response"><span class="errormsg">' .
     'Oopsy Daisy!  Error: ' . $e->getMessage() . 
-    '</span><a class="error-link" href="brickball.php">Go back</a>.</p>';
+    '</span><a class="error-link" href="brickball.php">Back</a>.</p>';
 }
 
 $conn = null;

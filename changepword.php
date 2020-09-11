@@ -10,6 +10,7 @@
   <meta name="description" 
   content="breakout game for web browser log in page">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/brickball-icon.png">
   <link rel="stylesheet" type="text/css" href="css/brickball.css">
 </head>
 

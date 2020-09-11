@@ -18,12 +18,12 @@
 <header>
   <h1><a class="heading" href="brickball.php">brick ball</a></h1>
 </header>
+
 <?php
 $servername = "localhost";
 $username = "adpfrank_7ba6_cg";
 $password = "gosun";
 $dbname = "adpfrank_db1";
-$email = $_POST['email']
 $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
@@ -269,7 +269,7 @@ if ($_POST['newpsw'] == $_POST['newpsw-confirm']) {
 
       /* email user to further verify the actual user
       wanted to change password and give success response. */
-      mail($email,"Password reset",$msg,$headers);
+      mail($_POST['email'],"Password change",$msg,$headers);
       echo '<div class="form-response">Password successfully reset!' .
       '<br /><br /><button type="button" onclick="window.location.href=' .
       '\'brickball.php\'">Log in & Play</button></div>';
@@ -284,6 +284,7 @@ if ($_POST['newpsw'] == $_POST['newpsw-confirm']) {
 } else {echo '<p class="form-response">Passwords do not match. ' .
   ' Please, try again.</p>';}
 ?>
+
 </div>
 
 </body>

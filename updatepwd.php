@@ -18,6 +18,7 @@
 <header>
   <h1><a class="heading" href="brickball.php">brick ball</a></h1>
 </header>
+
 <?php
 $servername = "localhost";
 $username = "adpfrank_7ba6_cg";
@@ -25,6 +26,7 @@ $password = "gosun";
 $dbname = "adpfrank_db1";
 $token = $_GET['token'];
 $email = $_GET['email'];
+$now = time();
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=adpfrank_db1", $username, $password);
@@ -40,7 +42,7 @@ try {
     $column = $sql->fetch(PDO::FETCH_ASSOC);
 
     // check to see if token expired, if not show the form 
-    if (time() < $column['expiration']) { 
+    if ($now < $column['expiration']) { 
     echo '<div class="form-response"><h2>Reset Password</h2>' .
     '<form class="tryagain" action="resetpwd.php" method="post">' .
     '<fieldset><input type="hidden" name="email" value="' . 
