@@ -60,8 +60,8 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
         <td style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;' >
     <![endif]-->
 
-    <table role='presentation' class='outer' align='center' bgcolor='#f5f5f5' 
-    style='border-collapse:collapse;border-spacing:0;font-family:Calibri,Helvetica,Verdana,sans-serif;Margin:0 auto;width:100%;max-width:600px;' >
+    <table role='presentation' class='outer' align='center' 
+    bgcolor='#f5f5f5' style='color:#000000;border-collapse:collapse;border-spacing:0;font-family:Calibri,Helvetica,Verdana,sans-serif;Margin:0 auto;width:100%;max-width:600px;' >
       <tr>
         <td class='header' bgcolor='#f5f5f5' 
         style='border-collapse:collapse;border-bottom:thick solid #000000;padding-top:40px;padding-bottom:20px;padding-right:30px;padding-left:30px;' >
