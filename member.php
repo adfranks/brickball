@@ -81,8 +81,8 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
         <td style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;' >
     <![endif]-->
 
-    <table role='presentation' class='outer' align='center' bgcolor='#fcfaee' 
-    style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;Margin:0 auto;width:100%;max-width:600px;' >
+    <table role='presentation' class='outer' align='center' 
+    bgcolor='#fcfaee' style='color:#000000;border-collapse:collapse;border-spacing:0;font-family:sans-serif;Margin:0 auto;width:100%;max-width:600px;' >
       <tr>
         <td class='header' bgcolor='#fcfaee' style='border-collapse:collapse;padding-top:20px;padding-bottom:20px;padding-right:30px;padding-left:30px;' >
 
@@ -98,7 +98,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
             <tr>
               <td class='subhead' style='border-collapse:collapse;padding-top:10px;padding-bottom:10px;padding-right:0;padding-left:0;font-size:33px;font-family:Tahoma, sans-serif;line-height:45px;font-weight:bold;' >
                 <img src='https://adfranks.com/brickball/images/brickball-icon.png' width='26' alt='' style='height:auto;max-width:26;border-width:0;border-style:none' />
-                BRICK BALL
+                <b>BRICK BALL</b>
               </td>
             </tr>
           </table>
@@ -116,22 +116,20 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
           <table role='presentation' width='100%' style='border-collapse:collapse;border-spacing:0;font-family:Calibri,Helvetica,Verdana,sans-serif;' >
             <tr>
-              <td class='inner contents' 
-              style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;width:100%;text-align:left;' >
+              <td class='inner contents' style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;width:100%;text-align:left;' >
                 <p style='padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;Margin:0;font-size:26px;' >
-                  <b class='h1' style='font-size:26px;' >
+                  <b class='h1' style='color:#ffffff;font-size:26px;' >
                     WELCOME TO BRICK BALL!                    
                   </b>
                 </p>
-                <p class='body-c' style='Margin:16px 0;line-height:22px;font-size:18px;' >
-                The classic games Breakout and Super Breakout are back in
-                a slightly new guise.  It has the look of the colorful
+                <p class='body-c' style='color:#ffffff;Margin:16px 0;line-height:22px;font-size:18px;' >The classic games Breakout and Super Breakout
+                are back in a slightly new guise.  It has the
+                look of the colorful
                 Super Breakout, as well as the option for more than one
                 level.  However, it is much more minimalist than
                 flashy Arkanoid versions.  The angle and speed of the ball,
                 as well as the size of the paddle, are dynamic and vary
-                at certain times during the game.  Have fun!
-                </p> 
+                at certain times during the game.  Have fun!</p>
               </td>
             </tr>
           </table>
@@ -139,7 +137,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
           <table role='presentation' class='buttonwrapper' align='left' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
             <tr>
               <td class='button' bgcolor='#0066ff' style='border-collapse:collapse;text-align:center;' >
-                <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
+                <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;background-color:#0066ff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
                   Play a Game
                 </a>
               </td>
@@ -149,11 +147,10 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
         </td>
       </tr>
       <tr>
-        <td height='20'></td>
+        <td height='20'>&nbsp;</td>
       </tr>
       <tr>
-        <td class='two-column' bgcolor='#fcfaee' 
-        style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:10px;padding-left:10px;text-align:center;font-size:0;' >
+        <td class='two-column' bgcolor='#fcfaee' style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:10px;padding-left:10px;text-align:left;font-size:0;' >
 
           <!--[if (gte mso 9)|(IE)]>
           <table role='presentation' width='100%' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
@@ -167,26 +164,24 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
               <tr>
                 <td class='inner' style='border-collapse:collapse;padding-top:10px;padding-bottom:20px;padding-right:10px;padding-left:10px;' >
 
-                  <table role='presentation' class='contents' 
-                  style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;width:100%;font-size:16px;text-align:left;' >
+                  <table role='presentation' class='contents' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;width:100%;font-size:16px;text-align:left;' >
                     <tr>
                       <td style='border-collapse:collapse;padding-top:0;padding-bottom:10px;padding-right:0;padding-left:0;' >
                         <img src='https://adfranks.com/brickball/images/highscore.jpg' width='270' alt='' style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
                       </td>
                     </tr>
                     <tr>
-                      <td class='text' style='border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
+                      <td class='text' style='text-align:left;border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
                         <p style='padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;Margin:0;font-size:20px;' >
-                         <b style='font-size:20px'>
+                         <b style='color:#000000;font-size:20px'>
                           Keep track of your high score.
                          </b>                        
                         </p>
-                        <p class='body-c' style='line-height:22px;'>
-                        Appreciate your accomplishments and celebrate
-                        your best score!  It's hard to make it back to the
+                        <p class='body-c' style='color:#000000;line-height:22px;font-size:16px;Margin:16px 0;'>Appreciate your accomplishments
+                        and celebrate your best score!  It's hard to
+                        make it back to the
                         top.  That high score is proof you made it there
-                        once and you could do it again.
-                        </p>
+                        once and you could do it again.</p>
                       </td>
                     </tr>
                   </table>
@@ -194,8 +189,8 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   <table role='presentation' class='buttonwrapper' align='left' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
                     <tr>
                       <td class='button' bgcolor='#0066ff' style='border-collapse:collapse;text-align:center;' >
-                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
-                          Check It Out
+                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;background-color:#0066ff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
+                          Log In
                         </a>
                       </td>
                     </tr>
@@ -226,14 +221,13 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                       </td>
                     </tr>
                     <tr>
-                      <td class='text' style='border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
+                      <td class='text' style='text-align:left;border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
                         <p style='padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;Margin:0;font-size:20px;' >
-                         <b style='font-size:20px'>
+                         <b style='color:#000000;font-size:20px'>
                           Play your way into the top ten list.
                          </b>                        
                         </p>
-                        <p class='body-c' style='line-height:22px;' >
-                        Brick ball is a deceptively simple game.  
+                        <p class='body-c' style='color:#000000;line-height:22px;font-size:16px;Margin:16px 0;' >Brick ball is a deceptively simple game.
                         However, if you slip just once or get an angle
                         slightly wrong, you could lose a ball really
                         quickly.  Good luck getting into the top ten list!
@@ -245,7 +239,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   <table role='presentation' class='buttonwrapper' align='left' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
                     <tr>
                       <td class='button' bgcolor='#0066ff' style='border-collapse:collapse;text-align:center;' >
-                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
+                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;background-color:#0066ff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
                           Play to Win
                         </a>
                       </td>
@@ -268,7 +262,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
       </tr>
       <tr>
         <td class='two-column' bgcolor='#fcfaee' 
-        style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:10px;padding-left:10px;text-align:center;font-size:0;' >
+        style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:10px;padding-left:10px;text-align:left;font-size:0;' >
 
           <!--[if (gte mso 9)|(IE)]>
           <table role='presentation' width='100%' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
@@ -290,18 +284,17 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                       </td>
                     </tr>
                     <tr>
-                      <td class='text' style='border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
+                      <td class='text' style='text-align:left;border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
                         <p style='padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;Margin:0;font-size:20px;' >
-                         <b style='font-size:20px'>
+                         <b style='color:#000000;font-size:20px'>
                           Unlimited minutes.
                          </b>                        
                         </p>
-                        <p class='body-c' style='line-height:22px;'>Play
-                        for as long as you like.  You don't have to
-                        worry about the clock and how much time you have.
-                        It's free!  This is about your skill and how long
-                        you can keep that ball bouncing.
-                        </p>
+                        <p class='body-c' style='color:#000000;line-height:22px;font-size:16px;Margin:16px 0;'>Play for as long as you like.  You don't
+                        have to worry about the clock and how
+                        much time you have.
+                        This is about your skill and how long you can
+                        keep that ball bouncing.</p>
                       </td>
                     </tr>
                   </table>
@@ -309,7 +302,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   <table role='presentation' class='buttonwrapper' align='left' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
                     <tr>
                       <td class='button' bgcolor='#0066ff' style='border-collapse:collapse;text-align:center;' >
-                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
+                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;background-color:#0066ff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
                           Start Now
                         </a>
                       </td>
@@ -341,19 +334,18 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                       </td>
                     </tr>
                     <tr>
-                      <td class='text' style='border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
+                      <td class='text' style='text-align:left;border-collapse:collapse;padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;' >
                         <p style='padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;Margin:0;font-size:20px;' >
-                         <b style='font-size:20px'>
+                         <b style='color:#000000;font-size:20px'>
                           Easily cancel your membership at any time.
                          </b>                        
                         </p>
-                        <p class='body-c' style='line-height:22px;' >
-                        At any time you wish, you may quickly and easily
-                        end your membership.  Simply log in and select
+                        <p class='body-c' style='color:#000000;line-height:22px;font-size:16px;Margin:16px 0;' >At any time you wish, you may quickly
+                        and easily end your membership.  Simply
+                        log in and select
                         the cancel membership option.  Your record will
                         be purged from our system.  You can sign up
-                        again whenever you wish.
-                        </p>
+                        again whenever you wish.</p>
                       </td>
                     </tr>
                   </table>
@@ -361,8 +353,8 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   <table role='presentation' class='buttonwrapper' align='left' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
                     <tr>
                       <td class='button' bgcolor='#0066ff' style='border-collapse:collapse;text-align:center;' >
-                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
-                          Log In
+                        <a href='https://adfranks.com/brickball/brickball.php' target='_blank' style='color:#ffffff;background-color:#0066ff;font-size:18px;font-family:sans-serif;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px;border:1px solid #0066ff;text-decoration:none;display:inline-block;' >
+                          Check It Out
                         </a>
                       </td>
                     </tr>
@@ -383,7 +375,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
         </td>
       </tr>
       <tr>
-        <td height='10'></td>
+        <td height='10'>&nbsp;</td>
       </tr>
       <tr>
         <td class='footer' bgcolor='#ff3300' style='border-collapse:collapse;padding-top:20px;padding-bottom:95px;padding-right:30px;padding-left:30px;' >
@@ -414,7 +406,8 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
 </body>
 
-</html>";
+</html>
+";
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= "From: info@adfranks.com" . "\r\n";
