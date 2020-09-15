@@ -42,7 +42,8 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>Welcome</title>
-  <link rel='icon' href='https://adfranks.com/brickball/images/brickball-icon.png'>
+  <link rel='icon' 
+  href='https://adfranks.com/brickball/images/brickball-icon.png'>
   <style type='text/css'>
     @media screen and (max-width: 500px) {
       .two-column .column {
@@ -170,8 +171,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;width:100%;font-size:16px;text-align:left;' >
                     <tr>
                       <td style='border-collapse:collapse;padding-top:0;padding-bottom:10px;padding-right:0;padding-left:0;' >
-                        <img src='https://adfranks.com/brickball/images/highscore.jpg' width='270' alt='' 
-                        style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
+                        <img src='https://adfranks.com/brickball/images/highscore.jpg' width='270' alt='' style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
                       </td>
                     </tr>
                     <tr>
@@ -222,8 +222,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;width:100%;font-size:16px;text-align:left;' >
                     <tr>
                       <td style='border-collapse:collapse;padding-top:0;padding-bottom:10px;padding-right:0;padding-left:0;' >
-                        <img src='https://adfranks.com/brickball/images/topten.jpg' width='270' alt='' 
-                        style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
+                        <img src='https://adfranks.com/brickball/images/topten.jpg' width='270' alt='' style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
                       </td>
                     </tr>
                     <tr>
@@ -287,8 +286,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;width:100%;font-size:16px;text-align:left;' >
                     <tr>
                       <td style='border-collapse:collapse;padding-top:0;padding-bottom:10px;padding-right:0;padding-left:0;' >
-                        <img src='https://adfranks.com/brickball/images/unlimited.jpg' width='270' alt='' 
-                        style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
+                        <img src='https://adfranks.com/brickball/images/unlimited.jpg' width='270' alt='' style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
                       </td>
                     </tr>
                     <tr>
@@ -339,8 +337,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                   style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;width:100%;font-size:16px;text-align:left;' >
                     <tr>
                       <td style='border-collapse:collapse;padding-top:0;padding-bottom:10px;padding-right:0;padding-left:0;' >
-                        <img src='https://adfranks.com/brickball/images/delete.jpg' width='270' alt='' 
-                        style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
+                        <img src='https://adfranks.com/brickball/images/delete.jpg' width='270' alt='' style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;width:100%;max-width:280px;height:auto;' />
                       </td>
                     </tr>
                     <tr>
