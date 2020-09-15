@@ -56,7 +56,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
 <body style='margin-top:0!important;margin-bottom:0!important;margin-right:0!important;margin-left:0!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;' >
 
-<center class='wrapper' style='width:100%!important;height:100%!important;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;' >
+<center class='wrapper' style='color:#000000;width:100%!important;height:100%!important;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;' >
   <div class='webkit' style='max-width:600px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;' >
 
     <!--[if (gte mso 9)|(IE)]>
@@ -74,8 +74,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
           <!-- Presentational attributes are overriden by style
           attributes.  Give the image a pixel width for Outlook, 
           but style to adjust size on others. -->
-          <img src='https://adfranks.com/brickball/images/pink-brick5g.jpg' width='600' alt='Brick Ball' 
-          style='border-width:0;width:100%;max-width:600px;height:auto;' />
+          <img src='https://adfranks.com/brickball/images/pink-brick5g.jpg' width='600' alt='Brick Ball' style='border-width:0;width:100%;max-width:600px;height:auto;' />
         </td>
       </tr>
       <tr>
@@ -99,8 +98,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
             <table role='presentation' width='100%' style='border-collapse:collapse;border-spacing:0;font-family:Verdana,sans-serif;' >
               <tr>
                 <td class='wrap' style='border-collapse:collapse;padding-top:6px;padding-bottom:20px;padding-right:10px;padding-left:10px;' >
-                  <img src='https://adfranks.com/portfolio/images/delete.jpg' width='270' height='173' alt='' 
-                  style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;' />
+                  <img src='https://adfranks.com/brickball/images/delete.jpg' width='270' height='173' alt='' style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;' />
                 </td>
               </tr>
             </table>
@@ -167,8 +165,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
             <table role='presentation' width='100%' style='border-collapse:collapse;border-spacing:0;font-family:Verdana,sans-serif;' >
               <tr>
                 <td class='wrap' style='border-collapse:collapse;padding-top:6px;padding-bottom:20px;padding-right:10px;padding-left:10px;' >
-                  <img src='https://adfranks.com/portfolio/images/highscore.jpg' width='270' height='173' alt='' 
-                  style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;' />
+                  <img src='https://adfranks.com/brickball/images/highscore.jpg' width='270' height='173' alt='' style='border-width:0;border-style:none;line-height:100%;outline-style:none;text-decoration:none;' />
                 </td>
               </tr>
             </table>
