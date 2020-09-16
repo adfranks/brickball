@@ -53,12 +53,12 @@ header, footer {
   text-transform: uppercase;
   letter-spacing: 3.5px; 
   background-color: darkslategrey;
-  padding: 3em;
+  padding: 3em 2.5em;
 }
-footer {padding-right: 2em;}
 header button, footer button {
   vertical-align: super;
   border: thin solid black;
+  margin-right: 10px;
 }
 header button:hover, footer button:hover {
   border: thin solid lightgrey;
@@ -119,8 +119,9 @@ ul {
   padding: 10px; 
 	border-radius: 5px;
   font-size: 1.1em;
-	background-color: #AAC0AA; 
 	line-height: 1.5em;
+  color: darkslategrey;
+	background-color: #AAC0AA; 
 }
 li {padding: 3px;}
 div {box-sizing: border-box;}
@@ -128,7 +129,7 @@ span.forgot {float: left; padding-top: 8px; font-size: 0.75em;}
 table {
   background-color: #132020; 
   color: white;
-  border-spacing: 10px; 
+  border-spacing: 3px; 
 }
 th, td {text-align: center; padding: 15px 5px;}
 th {
@@ -175,8 +176,13 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
 #topten {background-color: #AAC0AA;} 
 #topten h2 {margin-bottom: 20px;}
 #directions {background-color: #669999;} 
-#directions button {padding: 10px;}
-#objective {padding: 20px 0px; font-size: 1em;}
+#objective {
+  color: lightgrey;
+  padding: 20px 0px; 
+  font-family: Verdana;
+  font-size: 1.25em; 
+  letter-spacing: 0.25px;
+}
 #game-end:hover {animation: none; color: blue;}
 #game-end {
   animation: attention 20s infinite;
@@ -217,12 +223,12 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
   position: absolute;
   right: 35px;
   top: 15px;
-  color: rgb(0,0,0);
+  color: lightgrey;
   font-size: 35px;
   font-weight: bold;
 }
 .close:hover, .close:focus {
-  color: rgb(255, 52, 0);
+  color: darkslategrey;
   cursor: pointer;
 }
 .modal button, .tryagain button {
@@ -237,8 +243,8 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
   clear: both;
   display: table;
 }
-.heading {color:  white; text-decoration: none;}
-.heading:hover {text-decoration: none;}
+.heading {color: lightgrey; text-decoration: none;}
+.heading:hover {color: white; text-decoration: none;}
 .form-response {padding: 20px; background-color: lightgrey;}
 .errormsg {color: red; padding-left: 16px;}
 .error-link {margin: 20px;}
@@ -256,14 +262,14 @@ tr:nth-child(odd), th {background-color: lightslategrey;}
   40% {color:orange; text-decoration:underline;}
   45% {color:red; text-decoration:none;}
   50% {color:goldenrod; text-decoration:underline;}
-  55% {color:green; text-decoration:none;}
+  55% {color:palegreen; text-decoration:none;}
   60% {color:gold; text-decoration:underline;}
   65% {color:darkorchid; text-decoration:none;}
-  70% {color:palegreen; text-decoration:underline;}
+  70% {color:green; text-decoration:underline;}
   75% {color:deeppink; text-decoration:none;}
   80% {color:aqua; text-decoration:underline;}
-  85% {color:peru; text-decoration:none;}
-  90% {color:lawngreen; text-decoration:underline;}
+  85% {color:lawngreen; text-decoration:none;}
+  90% {color:royalblue; text-decoration:underline;}
   95% {color:coral; text-decoration:none;}
-  100% {color:lightgrey; text-decoration:underline;}
+  100% {color:orange; text-decoration:underline;}
 }
