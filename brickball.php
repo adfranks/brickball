@@ -59,14 +59,7 @@ if (!isset($_SESSION['uname'])) {
       <p id="greet">
         <?php 
         if (!isset($_SESSION['uname'])) {
-            echo 'Hello, creature! Brick Ball is a version of the' .
-            ' classic Breakout game. <button onclick=' .
-            '"document.getElementById(\'sign\').style.display=' .
-            '\'block\'">Sign up</button> or <button onclick=' .
-            '"document.getElementById(\'login\').style.display=' .
-            '\'block\'">log in</button> to keep track of your best ' .
-            'games.  See if you have what it takes to join the top ten' .
-            ' list.  Good luck! <span id="new-game">Press <button id=' .
+            echo '<span id="new-game">Press <button id=' .
             '"new-button" onclick="brickBall.restart()">start</button>' .
             ' for a new game.</span>';
         } else {
@@ -92,9 +85,11 @@ if (!isset($_SESSION['uname'])) {
     <div id="col-1">
       <div id="directions">
         <h2>How to Play</h2>
-        <p id="objective">
-          <span>Clear all the bricks by bouncing the ball into them.</span>
-        </p>
+        <p id="objective">Hello, creature!  Brick Ball is a version of the
+        classic Breakout video game. Simply clear all the bricks by bouncing
+        the ball into them.  Sign up or log in to keep track of your best
+        games.  See if you have what it takes to get into the top ten list.
+        Good luck!</p> 
         <ul>
           <li>Press the "s" key to serve the ball.</li>
           <li>Left and right arrows move the paddle.</li>  
