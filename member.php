@@ -20,6 +20,7 @@
 <header>
   <h1><a class="heading" href="https://adfranks.com/brickball/brickball.php">brick ball</a></h1>
 </header>
+
 <?php
 $_SESSION['uname'] = $_POST['user']; 
 $_SESSION['pword'] = md5($_POST['psw']); 
@@ -29,6 +30,9 @@ $servername = "localhost";
 $username = "adpfrank_7ba6_cg";
 $password = "gosun";
 $dbname = "adpfrank_db1";
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= "From: info@adfranks.com" . "\r\n";
 $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
@@ -81,34 +85,14 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
         <td style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;' >
     <![endif]-->
 
-    <table role='presentation' class='outer' align='center' 
-    bgcolor='#fcfaee' style='color:#000000;border-collapse:collapse;border-spacing:0;font-family:sans-serif;Margin:0 auto;width:100%;max-width:600px;' >
+    <table role='presentation' class='outer' align='center' bgcolor='#fcfaee' style='color:#000000;border-collapse:collapse;border-spacing:0;font-family:sans-serif;Margin:0 auto;width:100%;max-width:600px;' >
       <tr>
-        <td class='header' bgcolor='#fcfaee' style='border-collapse:collapse;padding-top:20px;padding-bottom:20px;padding-right:30px;padding-left:30px;' >
+        <td class='full-width-image' style='padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;color:#153643;font-size:28px;font-weight:bold;font-family:Verdana,sans-serif;' >
 
-          <!--[if (gte mso 9)|(IE)]>
-          <table role='presentation' width='600' align='left' cellpadding='0' cellspacing='0' border='0' 
-          style='border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
-            <tr>
-              <td style='border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;' >
-              <![endif]-->
-
-          <table role='presentation' align='left' border='0' cellpadding='0' cellspacing='0' 
-          style='width:100%;max-width:600px;border-collapse:collapse;border-spacing:0;font-family:sans-serif;' >
-            <tr>
-              <td class='subhead' style='border-collapse:collapse;padding-top:10px;padding-bottom:10px;padding-right:0;padding-left:0;font-size:33px;font-family:Tahoma, sans-serif;line-height:45px;font-weight:bold;' >
-                <img src='https://adfranks.com/brickball/images/brickball-icon.png' width='26' alt='' style='height:auto;max-width:26;border-width:0;border-style:none' />
-                <b>BRICK BALL</b>
-              </td>
-            </tr>
-          </table>
-
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-            </tr>
-          </table>
-          <![endif]-->
-
+          <!-- Presentational attributes are overriden by style
+          attributes.  Give the image a pixel width for Outlook, 
+          but style to adjust size on others. -->
+          <img src='https://adfranks.com/brickball/images/brickLogo.jpg' width='600' alt='Brick Ball - New Version of Vintage Game' style='border-width:0;width:100%;max-width:600px;height:auto;' />
         </td>
       </tr>
       <tr>
@@ -290,11 +274,11 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                           Unlimited minutes.
                          </b>                        
                         </p>
-                        <p class='body-c' style='color:#000000;line-height:22px;font-size:16px;Margin:16px 0;'>Play for as long as you like.  You don't
-                        have to worry about the clock and how
-                        much time you have.
-                        This is about your skill and how long you can
-                        keep that ball bouncing.</p>
+                        <p class='body-c' style='color:#000000;line-height:22px;font-size:16px;Margin:16px 0;'>Play for as long as you like.  
+                        It's free!  You don't have to worry about the
+                        clock and how much time you have.  This is about
+                        your skill and how long you can keep that ball
+                        bouncing.</p>
                       </td>
                     </tr>
                   </table>
@@ -406,11 +390,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
 </body>
 
-</html>
-";
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "From: info@adfranks.com" . "\r\n";
+</html>";
 
 if ($_POST['psw'] === $_POST['psw-confirm']) {
     try {
@@ -495,6 +475,7 @@ if ($_POST['psw'] === $_POST['psw-confirm']) {
     'Submit</button></fieldset></form></div>';
 }
 ?>
+
 </div>
 
 </body>
