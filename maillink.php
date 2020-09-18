@@ -70,7 +70,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
           style='border-collapse:collapse;border-spacing:0;font-family:Calibri,Helvetica,Verdana,sans-serif;' >
             <tr>
               <td height='70' style='padding-top:0;padding-bottom:20px;padding-right:20px;padding-left:0;border-collapse:collapse;' >
-                <img src='https://adfranks.com/brickball/images/brickball-icon.png' width='70' height='70' border='0' alt='' 
+                <img src='https://adfranks.com/brickball/images/brickballLogo.jpg' width='70' height='70' border='0' alt='' 
                 style='border-width:0;border-style:none;height:auto;line-height:100%;outline-style:none;text-decoration:none;' />
               </td>
             </tr>
@@ -156,7 +156,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
                 style='border-collapse:collapse;border-spacing:0;font-family:Calibri,Helvetica,Verdana,sans-serif;' >
                   <tr>
                     <td width='37' style='text-align:center;padding-top:0;padding-bottom:0;padding-right:10px;padding-left:10px;border-collapse:collapse;' >
-                      <img src='https://adfranks.com/brickball/images/brickball-icon.png' width='70' height='70' border='0' alt='' 
+                      <img src='https://adfranks.com/brickball/images/brickballLogo.jpg' width='70' height='70' border='0' alt='' 
                       style='border-width:0;border-style:none;height:auto;line-height:100%;outline-style:none;text-decoration:none;' />
                     </td>
                   </tr>

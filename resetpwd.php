@@ -40,8 +40,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>Successful Password Change</title>
-  <link rel='icon' 
-  href='https://adfranks.com/portfolio/images/brickball-icon.png'>
+  <link rel='icon' href='images/brickball-icon.png'>
   <style type='text/css'>
     @media screen and (min-width: 600px) {
       .h2wrap {

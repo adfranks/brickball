@@ -46,8 +46,7 @@ $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
 
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>Welcome</title>
-  <link rel='icon' 
-  href='https://adfranks.com/brickball/images/brickball-icon.png'>
+  <link rel='icon' href='images/brickball-icon.png'>
   <style type='text/css'>
     @media screen and (max-width: 500px) {
       .two-column .column {
